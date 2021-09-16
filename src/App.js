@@ -4,18 +4,16 @@ import { ServiceBar } from './components/ServiceBar';
 import { ServiceView } from './components/ServiceView';
 import { NextServicesBar } from './components/NextServicesBar';
 import { NetworkTime, DepartureTimeCountdown, idToType, nameTransform } from './util';
+
+import { Provider as State } from './state';
 import config from './config';
 
 import testData from './data/output_complex.json';
 
 // Constants
 const params = new URLSearchParams(window.location.search);
-const isLandscape = () => Number(params.get('landscape')) || false;
-const serviceTitle = isLandscape() ? 'Next service' : 'Service';
 const stopId = params.get('stop') || 200060;
 const departureTimeout = 0;
-
-const StateContext = React.createContext({ isLandscape });
 
 // 200060 Central
 // 206710 Chatswood
@@ -25,6 +23,37 @@ const StateContext = React.createContext({ isLandscape });
 export const schema = { id: null, type: idToType(-1), departs: null, line: null, destination: null, origin: null, platform: null, stops: [] };
 
 const useTestData = false;
+
+class StateManager extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      serviceTitle: null,
+      isLandscape: null
+    };
+  }
+
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener('resize', this.updateDimensions.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions.bind(this));
+  }
+
+  updateDimensions() {
+    const isLandscape = window.innerHeight < window.innerWidth;
+    const serviceTitle = isLandscape ? 'Next service' : 'Service';
+    this.setState({ isLandscape, serviceTitle });
+  }
+
+  render() {
+    return <State value={this.state}>
+      {this.props.children}
+    </State>;
+  }
+}
 
 class App extends Component {
   constructor(props) {
@@ -150,13 +179,13 @@ class App extends Component {
   render() {
     return this.state.error
       ? <div>Error: {this.state.error}</div>
-      : <StateContext.Provider value={{}}>
+      : <StateManager>
         <div className="wrapper">
-          <ServiceBar title={this.state.services[0]?.id && serviceTitle} service={this.state.services[0]} />
+          <ServiceBar service={this.state.services[0]} />
           <ServiceView services={this.state.services} stops={this.state.services[0]?.stops} departure={this.state.departureTimer} />
           <NextServicesBar />
         </div>
-      </StateContext.Provider>;
+      </StateManager>;
   }
 }
 
