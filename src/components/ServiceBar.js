@@ -1,20 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { ServiceIcon } from './ServiceIcon';
 import { NetworkTime, DepartureTime, lineColour } from '../util';
+import State from '../state';
 import '../assets/styles/ServiceBar.scss';
 
-export const ServiceBar = ({ service, title }) => {
+export const ServiceBar = ({ service }) => {
+  const { serviceTitle, isLandscape } = useContext(State);
+
   const lineText = service?.destination
     ? service.destination.includes('via')
       ? service.destination.split(' via ')
       : service.destination.split()
     : [null, null];
 
+  if (lineText[1] === 'Airport') lineText[1] = 'Airport stations';
+
   const verticalLayoutType = ['train', 'bus', 'lightrail', 'metro', 'ferry'].indexOf(String(service?.type.name)) === -1;
 
   return (
     <>
-      <TimeBar title={title} service={service} />
+      <TimeBar title={serviceTitle} service={service} />
 
       <>
         <div className={`serviceBar ${service.type.name}`}>
@@ -32,6 +37,12 @@ export const ServiceBar = ({ service, title }) => {
               {lineText[1] && `via ${lineText[1]}`}
             </div>}
           </div>
+          {service.platform && isLandscape && <div className="platform">
+            <div className="titlePair">
+              <div className="title">{service.platform?.title}</div>
+              <div className="value">{service.platform?.value}</div>
+            </div>
+          </div>}
         </div>
       </>
     </>

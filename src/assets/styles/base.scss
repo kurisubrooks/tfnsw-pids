@@ -12,13 +12,13 @@ body {
   height: 100%;
 
   @media #{$vertical} and #{$mobile} { font-size: 14px; }
-  @media #{$vertical} and #{$tablet} { font-size: 17px; }
+  @media #{$vertical} and #{$tablet} { font-size: 18px; }
   @media #{$vertical} and #{$laptop} { font-size: 34px; }
   @media #{$vertical} and #{$desktop} { font-size: 38px; }
   @media #{$vertical} and #{$tv} { font-size: 42px; }
 
   @media #{$horizontal} and #{$mobile} { font-size: 12px; }
-  @media #{$horizontal} and #{$tablet} { font-size: 16px; }
+  @media #{$horizontal} and #{$tablet} { font-size: 14px; }
   @media #{$horizontal} and #{$laptop} { font-size: 22px; }
   @media #{$horizontal} and #{$desktop} { font-size: 26px; }
   @media #{$horizontal} and #{$tv} { font-size: 38px; }
@@ -31,4 +31,16 @@ body {
 
   display: flex;
   flex-direction: column;
+}
+
+.titlePair {
+  font-size: 1.5em;
+  text-align: right;
+
+  .value {
+    font-size: 2.5em;
+    font-weight: 500;
+    height: 1.3em;
+    white-space: nowrap;
+  }
 }

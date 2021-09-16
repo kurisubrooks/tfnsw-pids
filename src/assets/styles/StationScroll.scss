@@ -1,6 +1,7 @@
 @import "_variables.scss";
 
 .scrollView {
+  position: relative;
   display: flex;
   padding: 0 $screenPadding;
   height: 100px;
@@ -12,20 +13,15 @@
 
   .infoContainer {
     display: flex;
+    position: absolute;
+    z-index: 1;
+    right: $screenPadding;
+    top: 0;
+    bottom: 0;
+    background: $background;
     flex-direction: column;
     justify-content: space-between;
     text-align: right;
-
-    .titlePair {
-      font-size: 1.5em;
-
-      .value {
-        font-size: 2.5em;
-        font-weight: 500;
-        height: 1.3em;
-        white-space: nowrap;
-      }
-    }
   }
 }
 
