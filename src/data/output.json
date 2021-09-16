@@ -1,0 +1,2623 @@
+{
+  "version": "10.2.1.42",
+  "systemMessages": [],
+  "locations": [{
+    "id": "216120",
+    "isGlobalId": true,
+    "name": "Yennora Station, Yennora",
+    "disassembledName": "Yennora Station",
+    "coord": [-33.86463, 150.97117],
+    "type": "stop",
+    "matchQuality": 100000,
+    "isBest": false,
+    "parent": {
+      "id": "95324013|1",
+      "name": "Yennora",
+      "type": "locality"
+    },
+    "assignedStops": [{
+      "id": "216120",
+      "isGlobalId": true,
+      "name": "Yennora Station",
+      "type": "stop",
+      "coord": [-33.86463, 150.97117],
+      "parent": {
+        "name": "Yennora",
+        "type": "locality"
+      },
+      "modes": [1],
+      "connectingMode": 100,
+      "properties": {
+        "stopId": "10101284"
+      }
+    }],
+    "properties": {
+      "stopId": "10101284"
+    }
+  }],
+  "stopEvents": [
+    {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:23:00Z",
+    "departureTimeEstimated": "2021-09-13T09:23:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 975,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "817P.1689.106.4.A.8.68035954",
+      "AVMSTripID": "817P.1689.106.4.A.8.68035954"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "occupancy": "MANY_SEATS",
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:25:00Z",
+    "departureTimeEstimated": "2021-09-13T09:25:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 83,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "503N.1689.106.100.B.8.68036311",
+      "AVMSTripID": "503N.1689.106.100.B.8.68036311"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:38:00Z",
+    "departureTimeEstimated": "2021-09-13T09:39:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 976,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "834P.1689.106.12.A.8.68037020",
+      "AVMSTripID": "834P.1689.106.12.A.8.68037020"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:40:00Z",
+    "departureTimeEstimated": "2021-09-13T09:40:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 113,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "835N.1689.106.60.B.8.68034558",
+      "AVMSTripID": "835N.1689.106.60.B.8.68034558"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "occupancy": "MANY_SEATS",
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:42:00Z",
+    "departureTimeEstimated": "2021-09-13T09:42:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Liverpool",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 254,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "538L.1689.106.4.A.8.68036775",
+      "AVMSTripID": "538L.1689.106.4.A.8.68036775"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "occupancy": "MANY_SEATS",
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:53:00Z",
+    "departureTimeEstimated": "2021-09-13T09:53:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 977,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "808S.1689.106.12.A.8.68035287",
+      "AVMSTripID": "808S.1689.106.12.A.8.68035287"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T09:55:00Z",
+    "departureTimeEstimated": "2021-09-13T09:55:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 132,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "529N.1689.106.100.A.8.68034216",
+      "AVMSTripID": "529N.1689.106.100.A.8.68034216"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:10:00Z",
+    "departureTimeEstimated": "2021-09-13T10:10:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 114,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "813N.1689.106.4.B.8.68034775",
+      "AVMSTripID": "813N.1689.106.4.B.8.68034775"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:10:00Z",
+    "departureTimeEstimated": "2021-09-13T10:10:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 251,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "552P.1689.106.4.A.8.68034351",
+      "AVMSTripID": "552P.1689.106.4.A.8.68034351"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:23:00Z",
+    "departureTimeEstimated": "2021-09-13T10:23:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 940,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "804S.1689.106.124.B.8.68035128",
+      "AVMSTripID": "804S.1689.106.124.B.8.68035128"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:25:00Z",
+    "departureTimeEstimated": "2021-09-13T10:25:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 87,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "530N.1689.106.28.B.8.68036729",
+      "AVMSTripID": "530N.1689.106.28.B.8.68036729"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:40:00Z",
+    "departureTimeEstimated": "2021-09-13T10:40:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 155,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "817R.1689.106.4.A.8.68035956",
+      "AVMSTripID": "817R.1689.106.4.A.8.68035956"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:40:00Z",
+    "departureTimeEstimated": "2021-09-13T10:40:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 256,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "547R.1689.106.4.A.8.68034749",
+      "AVMSTripID": "547R.1689.106.4.A.8.68034749"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:53:00Z",
+    "departureTimeEstimated": "2021-09-13T10:53:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 943,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "828T.1689.106.124.B.8.68036264",
+      "AVMSTripID": "828T.1689.106.124.B.8.68036264"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T10:55:00Z",
+    "departureTimeEstimated": "2021-09-13T10:55:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 133,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "534R.1689.106.12.A.8.68036242",
+      "AVMSTripID": "534R.1689.106.12.A.8.68036242"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:10:00Z",
+    "departureTimeEstimated": "2021-09-13T11:10:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 237,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "550R.1689.106.12.A.8.68036658",
+      "AVMSTripID": "550R.1689.106.12.A.8.68036658"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:10:00Z",
+    "departureTimeEstimated": "2021-09-13T11:10:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 157,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "808T.1689.106.12.A.8.68036704",
+      "AVMSTripID": "808T.1689.106.12.A.8.68036704"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:23:00Z",
+    "departureTimeEstimated": "2021-09-13T11:23:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 945,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "812W.1689.106.12.B.8.68034038",
+      "AVMSTripID": "812W.1689.106.12.B.8.68034038"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:25:00Z",
+    "departureTimeEstimated": "2021-09-13T11:25:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 59,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "552R.1689.106.4.A.8.68034353",
+      "AVMSTripID": "552R.1689.106.4.A.8.68034353"
+    }
+  }, {
+    "isRealtimeControlled": true,
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:40:00Z",
+    "departureTimeEstimated": "2021-09-13T11:40:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 198,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "551R.1689.106.12.A.8.68033998",
+      "AVMSTripID": "551R.1689.106.12.A.8.68033998"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:40:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 118,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "804T.1689.106.124.B.8.68035596"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:53:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 946,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "816V.1689.106.124.B.8.68036361"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T11:55:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 44,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "547S.1689.106.4.A.8.68036524"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:10:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 243,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "503P.1689.106.100.B.8.68036348"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:10:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 119,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "828U.1689.106.124.B.8.68034563"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:23:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 978,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "819W.1689.106.4.A.8.68036999"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:25:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 61,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "550S.1689.106.12.A.8.68034330"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:40:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 200,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "529P.1689.106.100.A.8.68034218"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:40:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 121,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "812X.1689.106.12.B.8.68034040"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:53:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 950,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "827U.1689.106.4.B.8.68040543"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T12:55:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 63,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "551S.1689.106.12.A.8.68033997"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:10:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 203,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "530P.1689.106.28.B.8.68037007"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:10:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 122,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "816W.1689.106.124.B.8.68036645"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:23:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 875,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "822W.1689.106.124.B.8.68035890"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:25:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 51,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "503R.1689.106.100.B.8.68040492"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:40:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "City Circle via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 162,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "819X.1689.106.4.A.8.68034988"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:40:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :R:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Leppington to Richmond",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 248,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101245",
+        "name": "Richmond Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "534S.1689.106.12.A.8.68034122"
+    }
+  }, {
+    "location": {
+      "id": "2161262",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 2",
+      "type": "platform",
+      "coord": [-33.86476, 150.97104],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN2"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 2",
+        "disassembledName": "Yennora Station, Platform 2",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:54:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :H:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "City to Parramatta or Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Leppington",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 878,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101100",
+        "name": "Central Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "825W.1689.106.4.B.8.68034343"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T13:55:00Z",
+    "transportation": {
+      "id": "nsw:020T5: :H:sj2",
+      "name": "Sydney Trains Network T5 Cumberland Line",
+      "disassembledName": "T5",
+      "number": "T5 Cumberland Line",
+      "iconId": 1,
+      "description": "Richmond to Leppington",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Richmond",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 47,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "525G.1399.130.2.A.8.67003704"
+    }
+  }, {
+    "location": {
+      "id": "2161261",
+      "isGlobalId": true,
+      "name": "Yennora, Yennora Station, Platform 1",
+      "type": "platform",
+      "coord": [-33.86468, 150.97099],
+      "properties": {
+        "stopId": "10101284",
+        "area": "10",
+        "platform": "YNN1"
+      },
+      "parent": {
+        "id": "216120",
+        "isGlobalId": true,
+        "name": "Yennora, Yennora Station, Platform 1",
+        "disassembledName": "Yennora Station, Platform 1",
+        "type": "stop",
+        "parent": {
+          "name": "Yennora",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101284"
+        }
+      }
+    },
+    "departureTimePlanned": "2021-09-13T14:10:00Z",
+    "transportation": {
+      "id": "nsw:020T2: :R:sj2",
+      "name": "Sydney Trains Network T2 Inner West & Leppington Line",
+      "disassembledName": "T2",
+      "number": "T2 Inner West & Leppington Line",
+      "iconId": 1,
+      "description": "Parramatta or Leppington to City",
+      "product": {
+        "class": 1,
+        "name": "Sydney Trains Network",
+        "iconId": 1
+      },
+      "operator": {
+        "id": "x0001",
+        "name": "Sydney Trains"
+      },
+      "destination": {
+        "name": "Central via Granville",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 404,
+        "lineDisplay": "LINE"
+      },
+      "origin": {
+        "id": "10101448",
+        "name": "Leppington Station",
+        "type": "stop"
+      }
+    },
+    "properties": {
+      "WheelchairAccess": "false",
+      "RealtimeTripId": "827V.1689.106.4.B.8.68040542"
+    }
+  }]
+}

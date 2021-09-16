@@ -1,0 +1,313 @@
+{
+  "version": "10.2.2.48",
+  "locations": [{
+    "id": "24701",
+    "isGlobalId": true,
+    "name": "Casino Station, Casino",
+    "disassembledName": "Casino Station",
+    "type": "stop",
+    "coord": [-28.86068, 153.03828],
+    "suburb": "Casino",
+    "parentId": "95935006|1",
+    "matchQuality": 100000,
+    "isBest": false,
+    "assignedStops": [{
+      "id": "24701",
+      "isGlobalId": true,
+      "name": "Casino Station, Casino",
+      "disassembledName": "Casino Station",
+      "type": "stop",
+      "coord": [-28.86068, 153.03828],
+      "parent": {
+        "name": "Casino",
+        "type": "locality"
+      },
+      "modes": [1, 7],
+      "connectingMode": 100,
+      "properties": {
+        "stopId": "10155062"
+      }
+    }],
+    "parent": {
+      "id": "95935006|1",
+      "name": "Casino",
+      "type": "locality"
+    }
+  }],
+  "stopEvents": [{
+    "id": "0f5612061b19564e564644444442445658561011041506001d1a133500564e564644464559444d5945412044454e46464e46402e565856181d1a11564e561a07034e434c4438474e544e3c4e071e46565856061105011107003a151911564e564644444442445609",
+    "isRealtimeControlled": true,
+    "realtimeTripId": "36513-70411:1142311:1142938",
+    "avmsTripId": "36513-70411:1142311:1142938",
+    "location": {
+      "id": "2000447",
+      "isGlobalId": true,
+      "name": "Sydney, Central Chalmers Street Light Rail",
+      "type": "platform",
+      "coord": [-33.88423, 151.20767],
+      "suburb": "Sydney",
+      "parentId": "200060",
+      "parent": {
+        "id": "200060",
+        "isGlobalId": true,
+        "name": "Sydney, Central Chalmers Street Light Rail",
+        "disassembledName": "Central Chalmers Street Light Rail",
+        "type": "stop",
+        "parent": {
+          "id": "95301001|1",
+          "name": "Sydney",
+          "type": "locality"
+        },
+        "properties": {
+          "stopId": "10101100"
+        }
+      },
+      "isAccessible": true
+    },
+    "departureTime": "2021-09-15T01:24:24Z",
+    "departureTimePlanned": "2021-09-15T01:22:24Z",
+    "departureTimeEstimated": "2021-09-15T01:24:24Z",
+    "departureStatus": "late",
+    "transportation": {
+      "id": "nsw:780L3: :H:sj2",
+      "name": "Sydney Light Rail Network L3 Kingsford Line",
+      "disassembledName": "L3",
+      "number": "L3 Kingsford Line",
+      "iconId": 13,
+      "description": "Circular Quay to Juniors Kingsford",
+      "product": {
+        "class": 4,
+        "name": "Sydney Light Rail Network",
+        "iconId": 4
+      },
+      "operator": {
+        "id": "SLR",
+        "name": "Sydney Light Rail"
+      },
+      "destination": {
+        "name": "Juniors Kingsford",
+        "type": "stop"
+      },
+      "origin": {
+        "id": "10101103",
+        "name": "Circular Quay",
+        "type": "stop"
+      },
+      "properties": {
+        "isTTB": true,
+        "tripCode": 71,
+        "lineDisplay": "LINE",
+        "FrequencyLine": "1"
+      },
+      "colour": {
+        "background": "#FFFFFF",
+        "foreground": "#781140",
+        "text": "#FFFFFF"
+      },
+      "networkId": 13
+    },
+    "isCancelled": false,
+    "isAccessible": true,
+    "onwardLocations": [{
+      "id": "2010108",
+      "isGlobalId": true,
+      "name": "Surry Hills, Surry Hills Light Rail",
+      "disassembledName": "Surry Hills Light Rail",
+      "type": "platform",
+      "coord": [-33.88807, 151.2119],
+      "suburb": "Surry Hills",
+      "parentId": "201029",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:25:00Z",
+      "departureTimeEstimated": "2021-09-15T01:27:00Z",
+      "arrivalTimePlanned": "2021-09-15T01:24:54Z",
+      "arrivalTimeEstimated": "2021-09-15T01:26:54Z"
+    }, {
+      "id": "2021101",
+      "isGlobalId": true,
+      "name": "Moore Park, Moore Park Light Rail",
+      "disassembledName": "Moore Park Light Rail",
+      "type": "platform",
+      "coord": [-33.89376, 151.22182],
+      "suburb": "Moore Park",
+      "parentId": "202195",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:29:18Z",
+      "departureTimeEstimated": "2021-09-15T01:31:18Z",
+      "arrivalTimePlanned": "2021-09-15T01:28:18Z",
+      "arrivalTimeEstimated": "2021-09-15T01:30:18Z"
+    }, {
+      "id": "203353",
+      "isGlobalId": true,
+      "name": "Kensington, ES Marks Light Rail",
+      "disassembledName": "ES Marks Light Rail",
+      "type": "platform",
+      "coord": [-33.90583, 151.22394],
+      "suburb": "Kensington",
+      "parentId": "203362",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:32:54Z",
+      "departureTimeEstimated": "2021-09-15T01:35:54Z",
+      "arrivalTimePlanned": "2021-09-15T01:32:48Z",
+      "arrivalTimeEstimated": "2021-09-15T01:35:48Z"
+    }, {
+      "id": "203355",
+      "isGlobalId": true,
+      "name": "Kensington, Kensington Light Rail",
+      "disassembledName": "Kensington Light Rail",
+      "type": "platform",
+      "coord": [-33.90937, 151.22338],
+      "suburb": "Kensington",
+      "parentId": "203361",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:34:18Z",
+      "departureTimeEstimated": "2021-09-15T01:37:18Z",
+      "arrivalTimePlanned": "2021-09-15T01:34:12Z",
+      "arrivalTimeEstimated": "2021-09-15T01:37:12Z"
+    }, {
+      "id": "203357",
+      "isGlobalId": true,
+      "name": "Kensington, UNSW Anzac Parade Light Rail",
+      "disassembledName": "UNSW Anzac Parade Light Rail",
+      "type": "platform",
+      "coord": [-33.91665, 151.22593],
+      "suburb": "Kensington",
+      "parentId": "203360",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:36:48Z",
+      "departureTimeEstimated": "2021-09-15T01:39:48Z",
+      "arrivalTimePlanned": "2021-09-15T01:36:42Z",
+      "arrivalTimeEstimated": "2021-09-15T01:39:42Z"
+    }, {
+      "id": "203286",
+      "isGlobalId": true,
+      "name": "Kingsford, Kingsford Light Rail",
+      "disassembledName": "Kingsford Light Rail",
+      "type": "platform",
+      "coord": [-33.92188, 151.2269],
+      "suburb": "Kingsford",
+      "parentId": "203295",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:38:48Z",
+      "departureTimeEstimated": "2021-09-15T01:41:48Z",
+      "arrivalTimePlanned": "2021-09-15T01:38:42Z",
+      "arrivalTimeEstimated": "2021-09-15T01:41:42Z"
+    }, {
+      "id": "203288",
+      "isGlobalId": true,
+      "name": "Kingsford, Juniors Kingsford Light Rail",
+      "disassembledName": "Juniors Kingsford Light Rail",
+      "type": "platform",
+      "coord": [-33.92498, 151.22927],
+      "suburb": "Kingsford",
+      "parentId": "203294",
+      "isAccessible": true,
+      "arrivalTimePlanned": "2021-09-15T01:40:30Z",
+      "arrivalTimeEstimated": "2021-09-15T01:44:30Z"
+    }],
+    "previousLocations": [{
+      "id": "2000450",
+      "isGlobalId": true,
+      "name": "Sydney, Circular Quay Light Rail",
+      "disassembledName": "Circular Quay Light Rail",
+      "type": "platform",
+      "coord": [-33.86151, 151.21004],
+      "suburb": "Sydney",
+      "parentId": "200020",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:08:00Z",
+      "departureTimeEstimated": "2021-09-15T01:09:00Z"
+    }, {
+      "id": "2000453",
+      "isGlobalId": true,
+      "name": "Sydney, Bridge Street Light Rail",
+      "disassembledName": "Bridge Street Light Rail",
+      "type": "platform",
+      "coord": [-33.86415, 151.20748],
+      "suburb": "Sydney",
+      "parentId": "2000177",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:10:24Z",
+      "departureTimeEstimated": "2021-09-15T01:10:24Z",
+      "arrivalTimePlanned": "2021-09-15T01:10:18Z",
+      "arrivalTimeEstimated": "2021-09-15T01:10:18Z"
+    }, {
+      "id": "2000454",
+      "isGlobalId": true,
+      "name": "Sydney, Wynyard Light Rail",
+      "disassembledName": "Wynyard Light Rail",
+      "type": "platform",
+      "coord": [-33.86668, 151.20721],
+      "suburb": "Sydney",
+      "parentId": "200080",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:11:30Z",
+      "departureTimeEstimated": "2021-09-15T01:11:30Z",
+      "arrivalTimePlanned": "2021-09-15T01:11:24Z",
+      "arrivalTimeEstimated": "2021-09-15T01:11:24Z"
+    }, {
+      "id": "2000456",
+      "isGlobalId": true,
+      "name": "Sydney, QVB Light Rail",
+      "disassembledName": "QVB Light Rail",
+      "type": "platform",
+      "coord": [-33.87158, 151.207],
+      "suburb": "Sydney",
+      "parentId": "2000171",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:13:30Z",
+      "departureTimeEstimated": "2021-09-15T01:14:30Z",
+      "arrivalTimePlanned": "2021-09-15T01:13:24Z",
+      "arrivalTimeEstimated": "2021-09-15T01:14:24Z"
+    }, {
+      "id": "2000458",
+      "isGlobalId": true,
+      "name": "Sydney, Town Hall Light Rail",
+      "disassembledName": "Town Hall Light Rail",
+      "type": "platform",
+      "coord": [-33.87387, 151.20694],
+      "suburb": "Sydney",
+      "parentId": "200070",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:15:30Z",
+      "departureTimeEstimated": "2021-09-15T01:15:30Z",
+      "arrivalTimePlanned": "2021-09-15T01:14:30Z",
+      "arrivalTimeEstimated": "2021-09-15T01:15:30Z"
+    }, {
+      "id": "2000443",
+      "isGlobalId": true,
+      "name": "Sydney, Chinatown Light Rail",
+      "disassembledName": "Chinatown Light Rail",
+      "type": "platform",
+      "coord": [-33.87859, 151.20558],
+      "suburb": "Sydney",
+      "parentId": "2000169",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:17:36Z",
+      "departureTimeEstimated": "2021-09-15T01:18:36Z",
+      "arrivalTimePlanned": "2021-09-15T01:17:30Z",
+      "arrivalTimeEstimated": "2021-09-15T01:18:30Z"
+    }, {
+      "id": "2000445",
+      "isGlobalId": true,
+      "name": "Haymarket, Haymarket Light Rail",
+      "disassembledName": "Haymarket Light Rail",
+      "type": "platform",
+      "coord": [-33.88143, 151.20536],
+      "suburb": "Haymarket",
+      "parentId": "2000168",
+      "isAccessible": true,
+      "departureTimePlanned": "2021-09-15T01:19:30Z",
+      "departureTimeEstimated": "2021-09-15T01:20:30Z",
+      "arrivalTimePlanned": "2021-09-15T01:19:30Z",
+      "arrivalTimeEstimated": "2021-09-15T01:20:30Z"
+    }],
+    "arrivalTimePlanned": "2021-09-15T01:40:30Z",
+    "arrivalTimeEstimated": "2021-09-15T01:44:30Z",
+    "alerts": [],
+    "arrivalStatus": "late",
+    "isBookingRequired": false,
+    "isHighFrequency": true,
+    "occupancyQueryId": "554ab5c9-aa41-4055-8940-3104eee17195"
+  }]
+}

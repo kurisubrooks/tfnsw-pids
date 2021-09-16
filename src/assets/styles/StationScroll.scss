@@ -1,0 +1,76 @@
+@import "_variables.scss";
+
+.scrollView {
+  display: flex;
+  padding: 0 $screenPadding;
+  height: 100px;
+  flex: 1;
+
+  .scrollContainer {
+    flex: 1;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+
+    .titlePair {
+      font-size: 1.5em;
+
+      .value {
+        font-size: 2.5em;
+        font-weight: 500;
+        height: 1.3em;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+/*
+.stationScroll {
+  display: flex;
+  overflow-y: hidden;
+  font-weight: 400;
+  flex: 1;
+
+  .stations {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    font-size: 2.3em;
+    overflow-y: hidden;
+
+    .station {
+      height: 1.3em;
+      -webkit-text-stroke: 1px;
+      word-wrap: break-word;
+
+      &.small {
+        -webkit-text-stroke: 0;
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+*/
+.stationScroll {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  flex: 1;
+
+  .station {
+    height: 1.3em;
+    font-size: 2.3em;
+    -webkit-text-stroke: 1px;
+    white-space: nowrap;
+
+    &.small {
+      -webkit-text-stroke: 0;
+      font-size: 0.5em;
+    }
+  }
+}

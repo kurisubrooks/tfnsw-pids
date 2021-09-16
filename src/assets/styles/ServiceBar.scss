@@ -1,0 +1,166 @@
+@import "./_variables.scss";
+
+/*
+  Top Bar
+  (Service, Time Now: 12:22:04)
+*/
+.timeBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #EC6606;
+  color: #FFFFFF;
+  padding: 0.4em $screenPadding 0.2em;
+
+  .nextService {
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  .timeContainer {
+    display: flex;
+
+    .timeText {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      font-size: 1.4em;
+      -webkit-text-stroke: 0.25px;
+
+      padding-bottom: 0.1em;
+      margin-right: 0.4em;
+    }
+
+    .timeNow {
+      font-size: 2em;
+      font-weight: 500;
+    }
+  }
+}
+
+/*
+  Line Icon
+  [T1], [T2], [T3], (M), (T), etc.
+*/
+
+.icon {
+  margin-right: 1em;
+
+  .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+
+    font-size: 3.5em;
+    font-weight: 500;
+    color: #FFF;
+    border-radius: 0.2em;
+
+    &.bus {
+      font-size: 2.5em;
+      width: 2.1em;
+      height: 2.1em;
+      background-color: '#00ade8';
+    }
+  }
+
+  .round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #FFF;
+
+    border: 6px solid #FFFFFF;
+    background-color: #F6891F;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+
+    &.small {
+      width: 1.15em;
+      height: 1.15em;
+      font-size: 3em;
+    }
+  }
+}
+
+/*
+  Service Bar
+  ([T1], Leppington via Parramatta) 
+*/
+
+.serviceBar {
+  display: flex;
+  margin: 1em $screenPadding;
+  border-bottom: 1px solid black;
+  padding-bottom: 1.15em;
+
+  &.intercity, &.coach {
+    flex-direction: column;
+
+    .serviceIcon {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      margin-bottom: 0.85em;
+
+      .serviceTime {
+        font-weight: 500;
+        font-size: 3.3em;
+        letter-spacing: -0.025em;
+      }
+    }
+
+    .lineText .lineTo {
+      font-size: 2.85em;
+      top: -0.125em;
+    }
+  }
+
+  &.metro .lineText,
+  &.lightrail .lineText {
+    justify-content: center;
+  }
+
+  &.lightrail .lineText .lineTo {
+    font-size: 2.5em;
+    top: 0;
+  }
+
+  .lineText {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+
+    .lineTo {
+      position: relative;
+      font-size: 3em;
+      letter-spacing: -0.025em;
+      line-height: 1em;
+      top: -0.1em;
+    }
+
+    .lineVia {
+      font-weight: 400;
+      -webkit-text-stroke: 1px ;
+      font-size: 2em;
+      color: #444;
+      height: 1em;
+    }
+
+    .booking {
+      display: inline-flex;
+      background-color: #EC6606;
+      color: #FFFFFF;
+      font-size: 1.75em;
+      margin-bottom: $screenPadding;
+      padding: 0.3em 0.7em;
+    }
+  }
+}

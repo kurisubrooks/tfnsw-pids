@@ -1,0 +1,61 @@
+@import "_variables.scss";
+@import url("https://use.typekit.net/phi8jlv.css");
+
+$vertical: 'screen and (orientation: portrait)';
+$horizontal: 'screen and (orientation: landscape)';
+
+$mobile: "(max-width: 480px)";
+$tablet: "(min-width: 481px) and (max-width: 768px)";
+$laptop: "(min-width: 769px) and (max-width: 1024px)";
+$desktop: "(min-width: 1025px) and (max-width: 1200px)";
+$tv: "(min-width: 1201px)";
+
+body {
+  margin: 0;
+  background-color: #F8F8F8;
+  font-size: $fontSize;
+  font-family: frank-new, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.05em;
+  height: 100%;
+
+  @media #{$vertical} and #{$mobile} { font-size: 14px; }
+  @media #{$vertical} and #{$tablet} { font-size: 17px; }
+  @media #{$vertical} and #{$laptop} { font-size: 34px; }
+  @media #{$vertical} and #{$desktop} { font-size: 38px; }
+  @media #{$vertical} and #{$tv} { font-size: 42px; }
+
+  @media #{$horizontal} and #{$mobile} { font-size: 12px; }
+  @media #{$horizontal} and #{$tablet} { font-size: 16px; }
+  @media #{$horizontal} and #{$laptop} { font-size: 22px; }
+  @media #{$horizontal} and #{$desktop} { font-size: 26px; }
+  @media #{$horizontal} and #{$tv} { font-size: 38px; }
+
+  /*
+  @media (min-width: 980px) and #{$verticalDisplay} {
+    font-size: $verticalFontSize;
+  }
+
+  @media (min-width: 980px) and #{$horizontalDisplay} {
+    font-size: $horizontalFontSize;
+  }
+  */
+
+  /*
+  320px — 480px: Mobile devices
+  481px — 768px: iPads, Tablets
+  769px — 1024px: Small screens, laptops
+  1025px — 1200px: Desktops, large screens
+  1201px and more —  Extra large screens, TV
+  */
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
