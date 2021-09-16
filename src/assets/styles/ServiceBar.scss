@@ -143,12 +143,13 @@
       font-size: 3em;
       letter-spacing: -0.025em;
       line-height: 1em;
+      -webkit-text-stroke: 0.5px;
       top: -0.1em;
     }
 
     .lineVia {
       font-weight: 400;
-      -webkit-text-stroke: 1px ;
+      -webkit-text-stroke: 0.5px;
       font-size: 2em;
       color: #444;
       height: 1em;
