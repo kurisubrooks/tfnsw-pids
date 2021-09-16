@@ -1,8 +1,12 @@
+$vertical: 'screen and (orientation: portrait)';
+$horizontal: 'screen and (orientation: landscape)';
+
+$mobile: "(max-width: 480px)";
+$tablet: "(min-width: 481px) and (max-width: 768px)";
+$laptop: "(min-width: 769px) and (max-width: 1024px)";
+$desktop: "(min-width: 1025px) and (max-width: 1200px)";
+$tv: "(min-width: 1201px)";
+
 $fontSize: 16px;
-$verticalFontSize: 36px;
-$horizontalFontSize: 40px;
-
-$verticalDisplay: '(orientation: portrait)';
-$horizontalDisplay: '(orientation: landscape)';
-
 $screenPadding: 1em;
+$background: #F8F8F8;
