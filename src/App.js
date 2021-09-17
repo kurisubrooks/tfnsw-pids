@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import { ServiceBar } from './components/ServiceBar';
 import { ServiceView } from './components/ServiceView';
 import { NextServicesBar } from './components/NextServicesBar';
-import { NetworkTime, DepartureTimeCountdown, idToType, nameTransform } from './util';
+import { DebugView } from './components/DebugView';
 
-import { Provider as State } from './state';
+import { NetworkTime, DepartureTimeCountdown, idToType, nameTransform } from './util';
+import { StateManager } from './state';
 import config from './config';
 
 import testData from './data/output_complex.json';
@@ -23,37 +24,7 @@ const departureTimeout = 0;
 export const schema = { id: null, type: idToType(-1), departs: null, line: null, destination: null, origin: null, platform: null, stops: [] };
 
 const useTestData = false;
-
-class StateManager extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      serviceTitle: null,
-      isLandscape: null
-    };
-  }
-
-  componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener('resize', this.updateDimensions.bind(this));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions.bind(this));
-  }
-
-  updateDimensions() {
-    const isLandscape = window.innerHeight < window.innerWidth;
-    const serviceTitle = isLandscape ? 'Next service' : 'Service';
-    this.setState({ isLandscape, serviceTitle });
-  }
-
-  render() {
-    return <State value={this.state}>
-      {this.props.children}
-    </State>;
-  }
-}
+const useDebugView = params.has('debugView') || false;
 
 class App extends Component {
   constructor(props) {
@@ -66,10 +37,10 @@ class App extends Component {
       departureTimer: null,
       hasDeparted: false
     };
-    this.loadData();
   }
 
   componentDidMount() {
+    this.syncServices();
     this.timerID = setInterval(() => this.tick(), 500);
   }
 
@@ -93,17 +64,9 @@ class App extends Component {
     }
   }
 
-  async loadData(data) {
-    if (!data) data = await this.fetchData();
-    if (!Array.isArray(data) && data.error) {
-      return this.setState({ error: data.error });
-    }
-    return this.setState({ services: data });
-  }
-
   async syncServices() {
     if (this.state.syncLock) return false;
-    console.log('Refreshing Data');
+    console.log('Updating Data');
     this.setState({ syncLock: true });
     const data = await this.fetchData();
     if (!Array.isArray(data) && data.error) {
@@ -116,6 +79,7 @@ class App extends Component {
   async fetchData() {
     try {
       let response;
+      if (useDebugView) return [schema];
       if (!useTestData) {
         console.info('Requesting');
         const apiURL = `https://transportnsw.info/api/trip/v1/departure-list-request?debug=false&depArrMacro=dep&depType=stopEvents&name=${stopId}&type=stop&accessible=false`;
@@ -139,7 +103,7 @@ class App extends Component {
 
       const output = stopEvents
         // filter out buses
-        .filter(a => a?.transportation.product.class !== 5)
+        .filter(a => a?.transportation.product.class <= 3)
         // filter out already-departed services
         .filter(b => (new Date(b?.departureTimeEstimated || b?.departureTimePlanned) - new Date()) / 1000 > departureTimeout)
         .map(i => {
@@ -179,13 +143,17 @@ class App extends Component {
   render() {
     return this.state.error
       ? <div>Error: {this.state.error}</div>
-      : <StateManager>
-        <div className="wrapper">
-          <ServiceBar service={this.state.services[0]} />
-          <ServiceView services={this.state.services} stops={this.state.services[0]?.stops} departure={this.state.departureTimer} />
-          <NextServicesBar />
-        </div>
-      </StateManager>;
+      : useDebugView
+        ? <StateManager>
+          <DebugView />
+        </StateManager>
+        : <StateManager>
+          <div className="wrapper">
+            <ServiceBar service={this.state.services[0]} />
+            <ServiceView services={this.state.services} stops={this.state.services[0]?.stops} departure={this.state.departureTimer} />
+            <NextServicesBar />
+          </div>
+        </StateManager>;
   }
 }
 
