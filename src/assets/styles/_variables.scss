@@ -8,5 +8,56 @@ $desktop: "(min-width: 1025px) and (max-width: 1200px)";
 $tv: "(min-width: 1201px)";
 
 $fontSize: 16px;
-$screenPadding: 1em;
+$screenPadding: 1.5em;
 $background: #F8F8F8;
+
+// Service Colours
+$sydtrains: #e65010;
+$intercity: #d55d31;
+$trainlink: #de4126;
+$lightrail: #e61e30;
+$ferry: #57b948;
+$bus: #00ade8;
+$metro: #009599;
+$coach: #742283;
+
+// Sydney Trains
+$T1: #f89c1d; // North Shore & Western Line
+$T2: #0097cd; // Inner West & Leppington Line
+$T3: #f36e22; // Bankstown Line
+$T4: #015aa5; // Eastern Suburbs & Illawarra Line
+$T5: #c32191; // Cumberland Line
+$T6: #4e6ca5; // Carlingford Line
+$T7: #6f808e; // Olympic Park Line
+$T8: #02964c; // Airport & South Line
+$T9: #d21f2f; // Northern Line
+
+// NSW TrainLink
+//  Intercity
+$BMT: #eb9f40; // Blue Mountains Line
+$CCN: #c13437; // Central Coast & Newcastle  Line
+$HUN: #793535; // Hunter Line
+$SCO: #245aa0; // South Coast Line
+$SHL: #429354; // Southern Highlands Line
+
+//  Regional
+$NRC: #000; // TrainLink North Coast (Brisbane)
+$NRW: #000; // TrainLink North-West (Moree, Armidale)
+$STH: #000; // TrainLink South (Canberra, Griffith, Melbourne)
+$WST: #000; // TrainLink West (Dubbo, Broken Hill)
+
+// Light Rail
+$L1: #99202b;
+$L2: #cb232b;
+$L3: #631835;
+
+// Sydney Ferry
+$F1: #04764a;
+$F2: #234635;
+$F3: #6b8b4e;
+$F4: #c4d552;
+$F5: #376044;
+$F6: #4ca75b;
+$F7: #4fad8a;
+$F8: #586132;
+$F9: #78b856;

@@ -12,16 +12,16 @@ body {
   height: 100%;
 
   @media #{$vertical} and #{$mobile} { font-size: 14px; }
-  @media #{$vertical} and #{$tablet} { font-size: 18px; }
+  @media #{$vertical} and #{$tablet} { font-size: 17px; }
   @media #{$vertical} and #{$laptop} { font-size: 34px; }
   @media #{$vertical} and #{$desktop} { font-size: 38px; }
   @media #{$vertical} and #{$tv} { font-size: 42px; }
 
   @media #{$horizontal} and #{$mobile} { font-size: 12px; }
-  @media #{$horizontal} and #{$tablet} { font-size: 14px; }
+  @media #{$horizontal} and #{$tablet} { font-size: 12px; }
   @media #{$horizontal} and #{$laptop} { font-size: 22px; }
-  @media #{$horizontal} and #{$desktop} { font-size: 26px; }
-  @media #{$horizontal} and #{$tv} { font-size: 38px; }
+  @media #{$horizontal} and #{$desktop} { font-size: 27px; }
+  @media #{$horizontal} and #{$tv} { font-size: 44px; }
 }
 
 .wrapper {
@@ -34,13 +34,15 @@ body {
 }
 
 .titlePair {
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-align: right;
 
   .value {
-    font-size: 2.5em;
+    position: relative;
+    font-size: 2.4em;
     font-weight: 500;
-    height: 1.3em;
+    height: 1.2em;
+    top: -0.1em;
     white-space: nowrap;
   }
 }
