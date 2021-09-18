@@ -2,11 +2,19 @@ import React, { Component, useContext } from 'react';
 import { ServiceIcon } from './ServiceIcon';
 import { NetworkTime, DepartureTime, truncateStationName, lineColour } from '../util';
 import State from '../state';
+
+import plane from '../assets/icons/airport.svg';
 import '../assets/styles/ServiceBar.scss';
 
+const icons = {
+  'plane': plane
+};
+
 export const ServiceBar = ({ service, icon, time = true }) => {
-  const { serviceTitle, isLandscape } = useContext(State);
+  const { serviceTitle } = useContext(State);
   const { destination, type, line, departs, booking, platform } = service;
+  const verticalStyle = ['intercity', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
+  let altIcon = null;
 
   let [lineTo, lineVia] = destination
     ? destination.includes('via')
@@ -14,8 +22,10 @@ export const ServiceBar = ({ service, icon, time = true }) => {
       : destination.split()
     : [null, null];
 
-  if (lineVia === 'Airport') lineVia = 'Airport stations';
-  const verticalStyle = ['intercity', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
+  if (lineVia === 'Airport') {
+    lineVia = 'Airport stations';
+    altIcon = 'plane';
+  }
 
   return <>
     {time && <TimeBar title={serviceTitle} type={type.name} />}
@@ -30,7 +40,10 @@ export const ServiceBar = ({ service, icon, time = true }) => {
           <div className="lineTo">{truncateStationName(lineTo)}</div>
           {booking
             ? <div className="booking">Booked seats only</div>
-            : lineVia && <div className="lineVia">via {lineVia}</div>}
+            : lineVia && <div className="lineVia">
+              via {lineVia}
+              {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
+            </div>}
         </div>
       </div>
       {platform && <div className="platform">
