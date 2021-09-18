@@ -16,57 +16,40 @@
     position: absolute;
     z-index: 1;
     right: $screenPadding;
-    top: 0;
+    top: $screenPadding;
     bottom: 0;
     background: $background;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     text-align: right;
+
+    &.showPlatform {
+      justify-content: space-between;
+      .platform { display: block; }
+    }
+
+    .platform { display: none; }
   }
-}
 
-/*
-.stationScroll {
-  display: flex;
-  overflow-y: hidden;
-  font-weight: 400;
-  flex: 1;
-
-  .stations {
+  .stationScroll {
     display: flex;
-    height: 100%;
     flex-direction: column;
-    font-size: 2.3em;
-    overflow-y: hidden;
-
+    font-weight: 400;
+    flex: 1;
+  
     .station {
-      height: 1.3em;
+      height: 1.225em;
+      font-size: 2em;
       -webkit-text-stroke: 1px;
-      word-wrap: break-word;
-
+      white-space: nowrap;
+  
+      @media #{$mobile} { -webkit-text-stroke: 0.25px; }
+      @media #{$tablet} { -webkit-text-stroke: 0.5px; }
+  
       &.small {
         -webkit-text-stroke: 0;
         font-size: 0.5em;
       }
-    }
-  }
-}
-*/
-.stationScroll {
-  display: flex;
-  flex-direction: column;
-  font-weight: 400;
-  flex: 1;
-
-  .station {
-    height: 1.3em;
-    font-size: 2.3em;
-    -webkit-text-stroke: 1px;
-    white-space: nowrap;
-
-    &.small {
-      -webkit-text-stroke: 0;
-      font-size: 0.5em;
     }
   }
 }

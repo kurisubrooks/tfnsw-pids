@@ -7,7 +7,7 @@
 .timeBar {
   display: flex;
   justify-content: space-between;
-  background-color: #EC6606;
+  background-color: $sydtrains;
   color: #FFFFFF;
   padding: 0.4em $screenPadding 0.2em;
 
@@ -58,6 +58,8 @@
     color: #FFF;
     border-radius: 0.2em;
 
+    @media #{$horizontal} { font-size: 3em; }
+
     &.bus {
       font-size: 2.5em;
       width: 2.1em;
@@ -66,26 +68,33 @@
     }
   }
 
-  .round {
+  .circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.45em;
+    height: 1.45em;
 
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 700;
     color: #FFF;
 
-    border: 6px solid #FFFFFF;
-    background-color: #F6891F;
+    border: 0.1em solid #FFFFFF;
+    background-color: $intercity;
     box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
 
     &.small {
-      width: 1.15em;
-      height: 1.15em;
-      font-size: 3em;
+      width: 1.25em;
+      height: 1.25em;
+      font-size: 2.5em;
+      border-width: 0.125em;
+
+      @media #{$horizontal} {
+        width: 1.25em;
+        height: 1.25em;
+        font-size: 3em;
+      }
     }
   }
 }
@@ -97,84 +106,104 @@
 
 .serviceBar {
   display: flex;
-  margin: 1em $screenPadding;
-  border-bottom: 1px solid black;
-  padding-bottom: 1.15em;
+  margin: 1em $screenPadding 0.5em;
+  border-bottom: 0.1em solid black;
+  padding-bottom: 1em;
 
-  &.intercity, &.coach {
-    flex-direction: column;
+  &.vertical {
+    margin: 0.5em $screenPadding 0;
 
-    .serviceIcon {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0;
-      margin-bottom: 0.85em;
+    @media #{$horizontal} {
+      height: 5.25em;
+    }
 
-      .serviceTime {
-        font-weight: 500;
-        font-size: 3.3em;
-        letter-spacing: -0.025em;
+    .serviceContainer {
+      flex-direction: column;
+
+      .service {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.25em;
+  
+        .serviceTime {
+          display: block;
+        }
       }
     }
 
     .lineText .lineTo {
       font-size: 2.85em;
-      top: -0.125em;
     }
   }
 
-  &.metro .lineText,
-  &.lightrail .lineText {
-    justify-content: center;
-  }
-
-  &.lightrail .lineText .lineTo {
-    font-size: 2.5em;
-    top: 0;
-  }
-
-  .lineText {
+  .serviceContainer {
     display: flex;
     flex: 1;
-    flex-direction: column;
-    font-weight: 500;
 
-    .lineTo {
-      position: relative;
-      font-size: 3em;
-      letter-spacing: -0.025em;
-      line-height: 1em;
-      -webkit-text-stroke: 0.5px;
-      top: -0.1em;
+    .service {
+      .serviceTime {
+        display: none;
+        font-weight: 500;
+        font-size: 3em;
+        letter-spacing: -0.025em;
+      }
     }
 
-    .lineVia {
-      font-weight: 400;
-      -webkit-text-stroke: 0.25px;
-      font-size: 1.9em;
-      color: #444;
-      height: 1em;
-    }
+    .lineText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 500;
+  
+      .lineTo {
+        font-size: 3em;
+        line-height: 1em;
+        letter-spacing: -0.03em;
+        -webkit-text-stroke: 0.5px;
+  
+        @media #{$mobile} { -webkit-text-stroke: 0px; }
+        @media #{$tablet} { -webkit-text-stroke: 0px; }
+        @media #{$horizontal} { font-size: 2.5em; }
+      }
+  
+      .lineVia {
+        color: #444;
+        font-weight: 400;
+        font-size: 1.9em;
+        line-height: 1em;
+        padding-top: 0.175em;
+        -webkit-text-stroke: 0.35px;
 
-    .booking {
-      display: inline-flex;
-      background-color: #EC6606;
-      color: #FFFFFF;
-      font-size: 1.75em;
-      margin-bottom: $screenPadding;
-      padding: 0.3em 0.7em;
+        @media #{$horizontal} { font-size: 1.7em; }
+      }
     }
   }
 
   .platform {
+    display: none;
     position: relative;
     top: -0.25em;
 
+    @media #{$horizontal} { display: block; }
+
+    .title {
+      font-size: 0.9em;
+    }
+
     .value {
       position: relative;
-      top: -0.2em;
-      font-size: 2.5em;
+      top: -0.05em;
+      font-size: 2.2em;
       height: 0;
     }
+  }
+
+  .booking {
+    display: inline-flex;
+    background-color: $sydtrains;
+    color: #FFFFFF;
+    font-size: 1.75em;
+    margin-bottom: $screenPadding;
+    padding: 0.3em 0.7em;
   }
 }

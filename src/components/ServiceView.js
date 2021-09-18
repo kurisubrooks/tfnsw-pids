@@ -6,20 +6,21 @@ import '../assets/styles/StationScroll.scss';
 
 export const ServiceView = ({ services, stops, departure }) => {
   const { isLandscape } = useContext(State);
+  const { platform } = services[0];
+  const showPlatform = platform && !isLandscape ? 'showPlatform' : '';
+  const scrollMin = isLandscape ? 5 : 8;
 
   return (
-    <div className="scrollView">
+    <div className={`scrollView ${isLandscape ? 'landscape' : ''}`}>
       <div className="scrollContainer">
-        <StationScroll type={services[0]?.type} stops={stops} />
+        <StationScroll type={services[0]?.type} stops={stops} limit={scrollMin} />
       </div>
-      <div className="infoContainer">
-        {services[0]?.platform && !isLandscape && <>
-          <div className="titlePair">
-            <div className="title">{services[0]?.platform?.title}</div>
-            <div className="value">{services[0]?.platform?.value}</div>
-          </div>
-        </>}
-        {services[0]?.id && <>
+      <div className={`infoContainer ${showPlatform}`}>
+        <div className="titlePair platform">
+          <div className="title">{platform?.title}</div>
+          <div className="value">{platform?.value}</div>
+        </div>
+        {departure && <>
           <div className="titlePair">
             <div className="title">Departs</div>
             <div className="value">{departure}</div>

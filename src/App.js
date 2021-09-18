@@ -134,8 +134,8 @@ class App extends Component {
       console.log(output);
       return output.length === 0 ? [schema] : output;
     } catch(error) {
-      this.setState({ error });
       console.log(error);
+      this.setState({ error: error.toString() });
       return [];
     }
   }

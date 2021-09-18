@@ -25,7 +25,7 @@ export const DepartureTimeCountdown = time => {
   } else if (minutes > 0) {
     return `${minutes} min`;
   } else if (seconds < 0) {
-    return seconds;
+    return null;
   }
 
   return 'Now';
@@ -49,7 +49,7 @@ export const idToType = id => {
     '-1': 'none',
     '1': 'train', // train
     '2': 'intercity', // intercity
-    '3': 'intercity', // trainlink (xpt, ghan, etc.)
+    '3': 'trainlink', // trainlink (xpt, ghan, etc.)
     '5': 'bus', // bus
     '7': 'coach', // coach
     '9': 'coach', // coach (private)
@@ -66,51 +66,26 @@ export const idToType = id => {
 
 export const lineColour = (line, type) => {
   const lineColours = {
-    'blank': 'rgba(0,0,0,0)',
+    'T1': '#f89c1d', 'T2': '#0097cd', 'T3': '#f36e22', 'T4': '#015aa5', 'T5': '#c32191', 'T7': '#6f808e', 'T8': '#02964c', 'T9': '#d21f2f',
 
-    'T1': '#f89c1d',
-    'T2': '#0097cd',
-    'T3': '#f36e22',
-    'T4': '#015aa5',
-    'T5': '#c32191',
-    'T7': '#6f808e',
-    'T8': '#02964c',
-    'T9': '#d21f2f',
+    'F1': '#04764a', 'F2': '#234635', 'F3': '#6b8b4e', 'F4': '#c4d552', 'F5': '#376044', 'F6': '#4ca75b', 'F7': '#4fad8a', 'F8': '#586132', 'F9': '#78b856',
 
-    'L1': '#99202b',
-    'L2': '#cb232b',
-    'L3': '#631835',
-
-    'F1': '#04764a',
-    'F2': '#234635',
-    'F3': '#6b8b4e',
-    'F4': '#c4d552',
-    'F5': '#376044',
-    'F6': '#4ca75b',
-    'F7': '#4fad8a',
-    'F8': '#586132',
-    'F9': '#78b856',
-
-    'T': '#de4126',
-    'L': '#e61e30',
-    'B': '#00ade8',
-    'C': '#742283',
-    'M': '#009599',
-    'F': '#57b948'
+    'L1': '#99202b', 'L2': '#cb232b', 'L3': '#631835'
   };
 
-  const fallback = {
-    'none': 'blank',
-    'train': 'T',
-    'intercity': 'T',
-    'bus': 'B',
-    'coach': 'C',
-    'ferry': 'F',
-    'lightrail': 'L',
-    'metro': 'M'
+  const serviceColours = {
+    'train': '#e65010',
+    'intercity': '#e65010',
+    'trainlink': '#de4126',
+    'lightrail': '#e61e30',
+    'bus': '#00ade8',
+    'coach': '#742283',
+    'metro': '#009599',
+    'ferry': '#57b948',
+    'none': 'rgba(0, 0, 0, 0)'
   };
 
-  return lineColours[line] || lineColours[fallback[type?.name || 'T']];
+  return line && lineColours[line] ? lineColours[line] : serviceColours[type || 'train'];
 };
 
 export const nameTransform = name => {
@@ -126,7 +101,8 @@ export const truncateStationName = name => {
     'Newcastle Interchange': 'Newcastle Intg',
     'North Strathfield': 'N Strathfield',
     'North Wollongong': 'N Wollongong',
-    'Sydney Olympic Park': 'Olympic Park'
+    'Sydney Olympic Park': 'Olympic Park',
+    'Shellharbour Junction': 'Shellhbr Jn'
   };
 
   return names[name] || name;

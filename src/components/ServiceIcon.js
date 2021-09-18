@@ -11,36 +11,34 @@ const typeToText = {
   'ferry': 'F'
 };
 
-// SHL,SCO,HUN,WST,STH,NRW,NRC,CCN,BMT
-
-export const ServiceIcon = ({ line, type }) => {
-  if (line === 'error') {
-    return <div className="icon">
-      <div className="square" style={{ backgroundColor: '#333' }}>!</div>
-    </div>;
+export const ServiceIcon = ({ line, type, icon }) => {
+  // Pre-determined Icons
+  if (icon) {
+    if (icon === 'information') {
+      return <Icon shape="square" text="!" colour="#333" />;
+    } else if (icon === 'outofservice') {
+      return <Icon shape="circle" text="—" colour="#e61e30" />;
+    }
   }
 
-  if (['intercity', 'coach', 'metro'].indexOf(type.name) === -1) {
-    const colour = lineColour(line, type);
+  if (!line) type = 'blank';
+  const isRound = ['intercity', 'coach', 'metro'].indexOf(type) > -1;
+  const colour = lineColour(line, type);
+  const size = isRound && type !== 'metro' ? 'small' : '';
+  const text = isRound ? typeToText[type] : line;
 
-    return <div className="icon">
-      <div
-        className={`square ${type.name}`}
-        style={{ backgroundColor: colour, color: line ? '#FFF' : '#000' }}
-      >
-        {line}
-      </div>
-    </div>;
-  }
+  return <>
+    <Icon
+      shape={isRound ? 'circle' : 'square'}
+      colour={colour} size={size} text={text}
+    />
+  </>;
+};
 
-  return (
-    <div className="icon">
-      <div
-        className={`round ${type.name !== 'metro' && 'small'}`}
-        style={{ backgroundColor: lineColour(line, type) }}
-      >
-        {typeToText[type.name]}
-      </div>
-    </div>
-  );
+const Icon = ({ shape, text, size, colour }) => {
+  const classes = `${shape} ${size}`;
+
+  return <div className="icon">
+    <div className={classes} style={{ backgroundColor: colour }}>{text}</div>
+  </div>;
 };

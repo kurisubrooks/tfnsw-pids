@@ -1,52 +1,46 @@
 import React, { Component, useContext } from 'react';
 import { ServiceIcon } from './ServiceIcon';
-import { NetworkTime, DepartureTime, lineColour } from '../util';
+import { NetworkTime, DepartureTime, truncateStationName, lineColour } from '../util';
 import State from '../state';
 import '../assets/styles/ServiceBar.scss';
 
-export const ServiceBar = ({ service }) => {
+export const ServiceBar = ({ service, icon, time = true }) => {
   const { serviceTitle, isLandscape } = useContext(State);
+  const { destination, type, line, departs, booking, platform } = service;
 
-  const lineText = service?.destination
-    ? service.destination.includes('via')
-      ? service.destination.split(' via ')
-      : service.destination.split()
+  let [lineTo, lineVia] = destination
+    ? destination.includes('via')
+      ? destination.split(' via ')
+      : destination.split()
     : [null, null];
 
-  if (lineText[1] === 'Airport') lineText[1] = 'Airport stations';
+  if (lineVia === 'Airport') lineVia = 'Airport stations';
+  const verticalStyle = ['intercity', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
 
-  const verticalLayoutType = ['train', 'bus', 'lightrail', 'metro', 'ferry'].indexOf(String(service?.type.name)) === -1;
+  return <>
+    {time && <TimeBar title={serviceTitle} type={type.name} />}
 
-  return (
-    <>
-      <TimeBar title={serviceTitle} service={service} />
-
-      <>
-        <div className={`serviceBar ${service.type.name}`}>
-          <div className="serviceIcon">
-            <ServiceIcon type={service.type} line={service.line} />
-            {verticalLayoutType && <div className="serviceTime">
-              {DepartureTime(service.departs)}
-            </div>}
-          </div>
-          <div className="lineText">
-            <div className="lineTo">{lineText[0]}</div>
-            {service.booking ? <div className="booking">
-              Booked seats only
-            </div> : <div className="lineVia" style={{ display: lineText[1] ? 'flex' : 'none' }}>
-              {lineText[1] && `via ${lineText[1]}`}
-            </div>}
-          </div>
-          {service.platform && isLandscape && <div className="platform">
-            <div className="titlePair">
-              <div className="title">{service.platform?.title}</div>
-              <div className="value">{service.platform?.value}</div>
-            </div>
-          </div>}
+    <div className={`serviceBar ${verticalStyle}`}>
+      <div className="serviceContainer">
+        <div className="service">
+          <ServiceIcon icon={icon} line={line} type={type.name} />
+          <div className="serviceTime">{DepartureTime(departs)}</div>
         </div>
-      </>
-    </>
-  );
+        <div className="lineText">
+          <div className="lineTo">{truncateStationName(lineTo)}</div>
+          {booking
+            ? <div className="booking">Booked seats only</div>
+            : lineVia && <div className="lineVia">via {lineVia}</div>}
+        </div>
+      </div>
+      {platform && <div className="platform">
+        <div className="titlePair">
+          <div className="title">{platform?.title}</div>
+          <div className="value">{platform?.value}</div>
+        </div>
+      </div>}
+    </div>
+  </>;
 };
 
 export class TimeBar extends Component {
@@ -68,12 +62,13 @@ export class TimeBar extends Component {
   }
 
   render() {
-    const serviceType = this.props.service.type.name;
-    const types = { 'metro': 'M', 'bus': 'B', 'lightrail': 'L', 'ferry': 'F' };
-    const colour = lineColour(types[serviceType] || 'T');
+    const type = this.props.type === 'intercity'
+      || this.props.type === 'trainlink'
+      || this.props.type === 'none'
+      ? 'train' : this.props.type;
 
     return (
-      <div className="timeBar" style={{ backgroundColor: colour }}>
+      <div className="timeBar" style={{ backgroundColor: lineColour(null, type) }}>
         <div className="nextService">
           {this.props.title}
         </div>

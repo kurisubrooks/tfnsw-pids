@@ -2,18 +2,19 @@ import React from 'react';
 import Marquee from './Marquee.js';
 import '../assets/styles/StationScroll.scss';
 
-export const StationScroll = ({ type, stops, speed = 75 }) => {
+export const StationScroll = ({ type, stops, limit, speed = 75 }) => {
   if (!stops) return false;
   const buffer = ['', ''];
   const stopsJoined = stops.map(x => x.station).concat(buffer);
 
-  const scroll = stops.length >= 9;
+  const scroll = stops.length > limit;
   const classes = `station ${type.name === 'bus' && 'small'}`;
+  const scrollSpeed = speed * (window.innerHeight / 650);
 
   return (
     <div className="stationScroll">
       {scroll ? <>
-        <Marquee speed={speed}>
+        <Marquee speed={scrollSpeed}>
           {stopsJoined.map((station, index) =>
             <div key={index} className={classes}>
               {station}
@@ -30,3 +31,9 @@ export const StationScroll = ({ type, stops, speed = 75 }) => {
     </div>
   );
 };
+
+/*
+const Station = ({ name }) => {
+
+};
+*/
