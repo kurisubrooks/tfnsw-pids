@@ -101,7 +101,7 @@
 
 /*
   Service Bar
-  ([T1], Leppington via Parramatta) 
+  ([T1], Leppington via Parramatta)
 */
 
 .serviceBar {
@@ -124,7 +124,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 0.25em;
-  
+
         .serviceTime {
           display: block;
         }
@@ -154,18 +154,18 @@
       flex-direction: column;
       justify-content: center;
       font-weight: 500;
-  
+
       .lineTo {
         font-size: 3em;
         line-height: 1em;
         letter-spacing: -0.03em;
         -webkit-text-stroke: 0.5px;
-  
+
         @media #{$mobile} { -webkit-text-stroke: 0px; }
         @media #{$tablet} { -webkit-text-stroke: 0px; }
         @media #{$horizontal} { font-size: 2.5em; }
       }
-  
+
       .lineVia {
         color: #444;
         font-weight: 400;

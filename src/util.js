@@ -1,5 +1,3 @@
-/* eslint-disable prefer-template */
-
 // TIME
 export const pad = t => {
   return String(t).length === 1 ? '0' + t : t;
