@@ -1,0 +1,52 @@
+@import "_variables.scss";
+
+.nextServices {
+  margin: 0.5em $screenPadding 1em;
+  border-top: 0.1em solid $fontColour;
+  border-color: $fontColour;
+  padding-top: 1em;
+  background: $background;
+  letter-spacing: -0.025em;
+
+  &.dark {
+    background: $darkBackground;
+    border-color: $darkFontColour;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      font-size: 1.65em;
+      justify-content: space-between;
+
+      &:first-child {
+        font-size: 1.2em;
+      }
+
+      &.via {
+        font-size: 1.2em;
+        height: 1.2em;
+        .cell { width: 100%; }
+        &:not(:last-child) { margin-bottom: 0.5em;}
+      }
+
+      .cell {
+        text-align: center;
+        width: 25%;
+
+        &:first-child {
+          width: 50%;
+          text-align: left;
+          -webkit-text-stroke: 0;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
