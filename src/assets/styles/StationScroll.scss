@@ -1,6 +1,7 @@
 @import "_variables.scss";
 
 .scrollView {
+  overflow: hidden;
   position: relative;
   display: flex;
   padding: 0 $screenPadding;
@@ -40,6 +41,10 @@
     &.showPlatform {
       justify-content: space-between;
       .platform { display: block; }
+    }
+
+    .titlePair .value {
+      font-size: 2em;
     }
 
     .platform { display: none; }

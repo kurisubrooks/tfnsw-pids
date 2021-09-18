@@ -32,7 +32,7 @@ export const DepartureTimeCountdown = time => {
 export const DepartureTime = time => {
   if (!time) return false;
   const ref = new Date(time);
-  return pad(ref.getHours()) + ':' + pad(ref.getMinutes());
+  return ref.getHours() + ':' + pad(ref.getMinutes());
 };
 
 export const NetworkTime = () => {
@@ -73,7 +73,7 @@ export const lineColour = (line, type) => {
 
   const serviceColours = {
     'train': '#e65010',
-    'intercity': '#e65010',
+    'intercity': '#f88934',
     'trainlink': '#de4126',
     'lightrail': '#e61e30',
     'bus': '#00ade8',
@@ -96,6 +96,7 @@ export const truncateStationName = name => {
     'Macquarie Fields': 'Macquarie Flds',
     'Macquarie University': 'Macquarie Uni',
     'Hawkesbury River': 'Hawkesbury Rvr',
+    'Mount Victoria': 'Mt Victoria',
     'Newcastle Interchange': 'Newcastle Intg',
     'North Strathfield': 'N Strathfield',
     'North Wollongong': 'N Wollongong',

@@ -4,7 +4,7 @@ import { ServiceBar } from '../components/ServiceBar';
 import { ServiceIcon } from '../components/ServiceIcon';
 
 const schema2 = { id: null, type: { id: 1, name: 'train' }, departs: new Date() + 500000, line: 'T1', destination: 'Emu Plains via Parramatta', origin: null, platform: { title: 'Platform', value: '1' }, stops: [], booking: false };
-const schema = { id: null, type: { id: 2, name: 'intercity' }, departs: new Date() + 500000, line: 'T1', destination: 'Mt Victoria via Parramatta', origin: null, platform: { title: 'Platform', value: '12' }, stops: [], booking: false };
+const schema = { id: null, type: { id: 2, name: 'intercity' }, departs: new Date('December 17, 1995 23:18:00'), line: 'T1', destination: 'Mt Victoria via Parramatta', origin: null, platform: { title: 'Platform', value: '12' }, stops: [], booking: false };
 
 export const DebugView = () => {
   return (
