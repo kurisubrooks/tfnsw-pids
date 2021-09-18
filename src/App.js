@@ -1,9 +1,7 @@
 /* eslint-disable no-unreachable */
 import React, { Component } from 'react';
-import { ServiceBar } from './components/ServiceBar';
-import { ServiceView } from './components/ServiceView';
-import { NextServicesBar } from './components/NextServicesBar';
-import { DebugView } from './components/DebugView';
+import { DebugView } from './views/DebugView';
+import { NextTrainView } from './views/NextTrainView';
 
 import { NetworkTime, DepartureTimeCountdown, idToType, nameTransform } from './util';
 import { StateManager } from './state';
@@ -141,19 +139,18 @@ class App extends Component {
   }
 
   render() {
-    return this.state.error
-      ? <div>Error: {this.state.error}</div>
-      : useDebugView
-        ? <StateManager>
-          <DebugView />
-        </StateManager>
-        : <StateManager>
-          <div className="wrapper">
-            <ServiceBar service={this.state.services[0]} />
-            <ServiceView services={this.state.services} stops={this.state.services[0]?.stops} departure={this.state.departureTimer} />
-            <NextServicesBar />
-          </div>
-        </StateManager>;
+    return <StateManager>
+      {this.state.error
+        ? <div>Error: {this.state.error}</div>
+        : useDebugView
+          ? <DebugView />
+          : <>
+            <div className="wrapper">
+              <NextTrainView services={this.state.services} departureTimer={this.state.departureTimer} />
+            </div>
+          </>
+      }
+    </StateManager>;
   }
 }
 

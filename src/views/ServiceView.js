@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StationScroll } from './StationScroll';
+import { StationScroll } from '../components/StationScroll';
 import State from '../state';
 
 import '../assets/styles/StationScroll.scss';
