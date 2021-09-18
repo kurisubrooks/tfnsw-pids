@@ -116,6 +116,7 @@
   padding-bottom: 1em;
 
   @media #{$horizontal} {
+    height: 4.5em;
     margin: 1em $horizontalScreenPadding 0.5em;
   }
 
@@ -128,29 +129,48 @@
   }
 
   &.vertical {
-    margin: 0.5em $screenPadding 0;
+    margin: 1em $screenPadding 0.5em;
 
     @media #{$horizontal} {
-      height: 5.25em;
-      margin: 0.5em $horizontalScreenPadding 0;
+      margin: 1em $horizontalScreenPadding 0.5em;
     }
 
     .serviceContainer {
       flex-direction: column;
+      @media #{$horizontal} { flex-direction: row; }
 
       .service {
         display: flex;
         align-items: center;
         margin-bottom: 0.25em;
+        @media #{$horizontal} { margin: 0; }
+      }
+
+      .serviceTime {
+        display: block;
+        font-size: 3em;
+        line-height: 1em;
+        @media #{$horizontal} { display: none; }
+      }
+
+      .lineText {
+        .lineTo {
+          font-size: 2.5em;
+        }
+
+        .lineVia {
+          height: 1em;
+          line-height: 1.3em;
+          font-size: 1.75em;
+          @media #{$horizontal} {
+            display: none;
+          }
+        }
 
         .serviceTime {
-          display: block;
+          @media #{$horizontal} { display: flex; }
         }
       }
-    }
-
-    .lineText .lineTo {
-      font-size: 2.85em;
     }
   }
 
@@ -158,13 +178,11 @@
     display: flex;
     flex: 1;
 
-    .service {
-      .serviceTime {
-        display: none;
-        font-weight: 500;
-        font-size: 3em;
-        letter-spacing: -0.025em;
-      }
+    .serviceTime {
+      display: none;
+      font-weight: 500;
+      font-size: 3em;
+      letter-spacing: -0.025em;
     }
 
     .lineText {
@@ -173,8 +191,10 @@
       justify-content: center;
       font-weight: 500;
 
+      .serviceTime { display: none; }
+
       .lineTo {
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 1em;
         letter-spacing: -0.03em;
         -webkit-text-stroke: 0.5px;

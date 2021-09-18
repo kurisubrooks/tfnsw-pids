@@ -37,11 +37,12 @@ export const ServiceBar = ({ service, icon, time = true }) => {
           <div className="serviceTime">{DepartureTime(departs)}</div>
         </div>
         <div className="lineText">
+          <div className="serviceTime">{DepartureTime(departs)}</div>
           <div className="lineTo">{truncateStationName(lineTo)}</div>
           {booking
             ? <div className="booking">Booked seats only</div>
-            : lineVia && <div className="lineVia">
-              via {lineVia}
+            : <div className="lineVia">
+              {lineVia && 'via ' + lineVia}
               {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
             </div>}
         </div>
