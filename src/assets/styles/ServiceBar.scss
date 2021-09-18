@@ -11,6 +11,10 @@
   color: #FFFFFF;
   padding: 0.4em $screenPadding 0.2em;
 
+  @media #{$horizontal} {
+    padding: 0.4em $horizontalScreenPadding 0.2em;
+  }
+
   .nextService {
     font-size: 2em;
     font-weight: 500;
@@ -111,6 +115,10 @@
   border-color: $fontColour;
   padding-bottom: 1em;
 
+  @media #{$horizontal} {
+    margin: 1em $horizontalScreenPadding 0.5em;
+  }
+
   &.dark {
     border-color: $darkFontColour;
 
@@ -124,6 +132,7 @@
 
     @media #{$horizontal} {
       height: 5.25em;
+      margin: 0.5em $horizontalScreenPadding 0;
     }
 
     .serviceContainer {

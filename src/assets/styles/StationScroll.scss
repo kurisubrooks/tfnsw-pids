@@ -7,6 +7,10 @@
   height: 100px;
   flex: 1;
 
+  @media #{$horizontal} {
+    padding: 0 $horizontalScreenPadding;
+  }
+
   &.dark {
     .infoContainer {
       background: $darkBackground;
@@ -26,7 +30,7 @@
     position: absolute;
     z-index: 1;
     right: $screenPadding;
-    top: $screenPadding;
+    top: 0;
     bottom: 0;
     background: $background;
     flex-direction: column;
