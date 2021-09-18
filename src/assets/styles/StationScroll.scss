@@ -7,6 +7,16 @@
   height: 100px;
   flex: 1;
 
+  &.dark {
+    .infoContainer {
+      background: $darkBackground;
+    }
+
+    .stationScroll .station .altIcon {
+      filter: invert(1);
+    }
+  }
+
   .scrollContainer {
     flex: 1;
   }

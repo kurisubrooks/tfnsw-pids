@@ -16,7 +16,23 @@ Realistic recreation of Sydney Trains' PIDs using Transport for NSW APIs.
 1. Run `yarn start`
 2. Open [http://localhost:3000/pids](http://localhost:3000/pids) in a browser
 
-Add `?stop={stopID}` to the URL to specify data for a certain station/platform. You can get the `stopID` by searching for your station/light rail stop/bus stop/etc. from [AnyTrip](https://anytrip.com.au/).
+## Config
+#### Proxy (Required)
+Fill the values in `src/config.js` with the details of your CORS proxy.
 
-#### Made by [@kurisubrooks](https://kurisubrooks.com/)
-Special Thanks to [Efren Palacios](https://efrenpalacios.dev/)
+#### URL Params
+Format: `url?key=value&key=value`
+| Key | Default Value | Description |
+| --- | --- | --- |
+| `stop` | `200060` (Central Station) | Specify the station/platform ID |
+| `theme` | `light` |  Specify `dark` or `light` colour themes |
+
+You can get the `stop` ID by searching for your station/light rail stop/bus stop/etc. from [AnyTrip](https://anytrip.com.au/).
+
+URL Example:  
+http://localhost:3000/pids?stop=200060&theme=dark
+
+### Credits
+Made by [@kurisubrooks](https://kurisubrooks.com/)  
+Special Thanks to [Efren Palacios](https://efrenpalacios.dev/)  
+Data sourced from https://transportnsw.info

@@ -11,9 +11,9 @@ const icons = {
 };
 
 export const ServiceBar = ({ service, icon, time = true }) => {
-  const { serviceTitle } = useContext(State);
+  const { serviceTitle, theme } = useContext(State);
   const { destination, type, line, departs, booking, platform } = service;
-  const verticalStyle = ['intercity', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
+  const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
   let altIcon = null;
 
   let [lineTo, lineVia] = destination
@@ -30,7 +30,7 @@ export const ServiceBar = ({ service, icon, time = true }) => {
   return <>
     {time && <TimeBar title={serviceTitle} type={type.name} />}
 
-    <div className={`serviceBar ${verticalStyle}`}>
+    <div className={`serviceBar ${verticalStyle} ${theme}`}>
       <div className="serviceContainer">
         <div className="service">
           <ServiceIcon icon={icon} line={line} type={type.name} />

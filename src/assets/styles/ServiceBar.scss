@@ -107,8 +107,17 @@
 .serviceBar {
   display: flex;
   margin: 1em $screenPadding 0.5em;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid $fontColour;
+  border-color: $fontColour;
   padding-bottom: 1em;
+
+  &.dark {
+    border-color: $darkFontColour;
+
+    .altIcon {
+      filter: invert(1);
+    }
+  }
 
   &.vertical {
     margin: 0.5em $screenPadding 0;

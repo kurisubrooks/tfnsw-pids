@@ -3,25 +3,30 @@ const Context = React.createContext({});
 export const Provider = Context.Provider;
 export default Context;
 
+const urlParams = new URLSearchParams(window.location.search);
+
 export class StateManager extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      theme: urlParams.get('theme') === 'dark' ? 'dark' : 'light',
       serviceTitle: null,
       isLandscape: null
     };
   }
 
   componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener('resize', this.updateDimensions.bind(this));
+    this.updateState();
+    document.body.classList.add(this.state.theme);
+    window.addEventListener('resize', this.updateState.bind(this));
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions.bind(this));
+    document.body.classList.remove(this.state.theme);
+    window.removeEventListener('resize', this.updateState.bind(this));
   }
 
-  updateDimensions() {
+  updateState() {
     const isLandscape = window.innerHeight < window.innerWidth;
     const serviceTitle = isLandscape ? 'Next service' : 'Service';
     this.setState({ isLandscape, serviceTitle });

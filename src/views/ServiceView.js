@@ -5,13 +5,13 @@ import State from '../state';
 import '../assets/styles/StationScroll.scss';
 
 export const ServiceView = ({ services, stops, departure }) => {
-  const { isLandscape } = useContext(State);
+  const { isLandscape, theme } = useContext(State);
   const { platform } = services[0];
   const showPlatform = platform && !isLandscape ? 'showPlatform' : '';
   const scrollMin = isLandscape ? 5 : 8;
 
   return (
-    <div className={`scrollView ${isLandscape ? 'landscape' : ''}`}>
+    <div className={`scrollView ${isLandscape ? 'landscape' : ''} ${theme}`}>
       <div className="scrollContainer">
         <StationScroll type={services[0]?.type} stops={stops} limit={scrollMin} />
       </div>
