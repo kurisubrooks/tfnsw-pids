@@ -15,9 +15,11 @@ const stopId = params.get('stop') || 200060;
 // 200060 Central
 // 206710 Chatswood
 // 215020 Parramatta
+// 278610 Katoomba
 // 279010 Lithgow
+// 26041 Canberra
 
-export const schema = { id: null, cars: null, line: null, mode: null, departs: null, serviceTime: null, destination: { to: null, via: null }, platform: { title: null, value: null }, doesNotStop: false, isBookingRequired: false, isExpress: false, isLimitedStops: false, isIntercity: true, stops: [] };
+export const schema = { id: null, cars: null, line: null, mode: null, departs: null, serviceTime: null, destination: { to: null, via: null }, platform: { title: null, value: null }, doesNotStop: null, isBookingRequired: null, isExpress: null, isLimitedStops: null, isIntercity: true, stops: [] };
 
 class App extends Component {
   constructor(props) {
