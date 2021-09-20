@@ -151,6 +151,7 @@ class DataGetter {
       line: pidData.service.tripInstance.trip.route.name,
       mode: modeToType(pidData.service.tripInstance.trip.route.mode, pidData.isIntercity),
       departs: pidData.stopTimeInstance.departure.time,
+      serviceTime: (pidData.stopTimeInstance.departure.time - (pidData.stopTimeInstance.departure.delay || 0)) * 1000,
       destination: { to: pidData.headsign.headline, via: pidData.headsign.subtitle },
       platform: { title: pidData.stop.disassembled.platformType, value: pidData.stop.disassembled.platformName },
 

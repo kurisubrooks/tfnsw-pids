@@ -12,7 +12,7 @@ const icons = {
 
 export const ServiceBar = ({ service, icon, time = true }) => {
   const { serviceTitle, theme } = useContext(State);
-  const { destination, mode, line, departs, booking, platform } = service;
+  const { destination, mode, line, serviceTime, isBookingRequired, platform } = service;
   const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'vertical' : '';
   let altIcon = null;
 
@@ -27,12 +27,12 @@ export const ServiceBar = ({ service, icon, time = true }) => {
       <div className="serviceContainer">
         <div className="service">
           <ServiceIcon icon={icon} line={line} type={mode} />
-          <div className="serviceTime">{DepartureTime(departs)}</div>
+          <div className="serviceTime">{DepartureTime(serviceTime)}</div>
         </div>
         <div className="lineText">
-          <div className="serviceTime">{DepartureTime(departs)}</div>
+          <div className="serviceTime">{DepartureTime(serviceTime)}</div>
           <div className="lineTo">{truncateStationName(destination.to)}</div>
-          {booking
+          {isBookingRequired
             ? <div><div className="booking">Booked seats only</div></div>
             : <div className="lineVia">
               {destination.via}
