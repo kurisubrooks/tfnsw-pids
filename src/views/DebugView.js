@@ -3,8 +3,10 @@ import React from 'react';
 import { ServiceBar } from '../components/ServiceBar';
 import { ServiceIcon } from '../components/ServiceIcon';
 
-const schema2 = { id: null, type: { id: 1, name: 'train' }, departs: new Date() + 500000, line: 'T1', destination: 'Emu Plains via Parramatta', origin: null, platform: { title: 'Platform', value: '1' }, stops: [], booking: false };
-const schema = { id: null, type: { id: 2, name: 'intercity' }, departs: new Date('December 17, 1995 23:18:00'), line: 'T1', destination: 'Mt Victoria via Parramatta', origin: null, platform: { title: 'Platform', value: '12' }, stops: [], booking: false };
+const schema = [
+  { id: null, cars: null, line: 'BMT', mode: 'intercity', departs: null, serviceTime: new Date('December 17, 1995 23:18:00').getTime(), destination: { to: 'Mt Victoria', via: 'via Parramatta' }, platform: { title: 'Platform', value: '12' }, doesNotStop: false, isBookingRequired: false, isExpress: false, isLimitedStops: false, isIntercity: true, stops: [] },
+  { id: null, cars: null, line: 'T1', mode: 'train', departs: null, serviceTime: null, destination: { to: 'Emu Plains', via: 'via Blacktown' }, platform: { title: 'Platform', value: '13' }, doesNotStop: false, isBookingRequired: false, isExpress: false, isLimitedStops: false, isIntercity: true, stops: [] }
+];
 
 export const DebugView = () => {
   return (
@@ -30,8 +32,8 @@ export const DebugView = () => {
         <ServiceIcon line="C" type="coach" />
       </div>
 
-      <ServiceBar time={false} service={schema2} />
-      <ServiceBar time={false} service={schema} />
+      <ServiceBar time={false} service={schema[1]} />
+      <ServiceBar time={false} service={schema[0]} />
     </div>
   );
 };

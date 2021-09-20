@@ -141,7 +141,7 @@ class DataGetter {
       return services;
     }
 
-    return [];
+    return null;
   }
 
   /* eslint-disable max-depth */

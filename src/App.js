@@ -4,11 +4,12 @@ import { DebugView } from './views/DebugView';
 import { NextTrainView } from './views/NextTrainView';
 
 import DataGetter from './lib/DataGetter';
-import { DepartureTimeCountdown, modeToType } from './util';
+import { DepartureTimeCountdown } from './util';
 import { StateManager } from './state';
 
 // Constants
 const params = new URLSearchParams(window.location.search);
+const useDebugView = params.has('debugView') || false;
 const stopId = params.get('stop') || 200060;
 
 // 200060 Central
@@ -16,8 +17,7 @@ const stopId = params.get('stop') || 200060;
 // 215020 Parramatta
 // 279010 Lithgow
 
-export const schema = { id: null, type: modeToType('sydneytrains'), departs: null, line: null, destination: { to: null, via: null }, platform: null, stops: [] };
-const useDebugView = params.has('debugView') || false;
+export const schema = { id: null, cars: null, line: null, mode: null, departs: null, serviceTime: null, destination: { to: null, via: null }, platform: { title: null, value: null }, doesNotStop: false, isBookingRequired: false, isExpress: false, isLimitedStops: false, isIntercity: true, stops: [] };
 
 class App extends Component {
   constructor(props) {
@@ -32,9 +32,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData();
-    this.tickTimer = setInterval(() => this.tick(), 500); // 0.5s
-    this.dataTimer = setInterval(() => this.fetchData(), 15 * 1000); // 15s
+    if (!useDebugView) {
+      this.fetchData();
+      this.tickTimer = setInterval(() => this.tick(), 500); // 0.5s
+      this.dataTimer = setInterval(() => this.fetchData(), 15 * 1000); // 15s
+    }
   }
 
   componentWillUnmount() {
@@ -50,8 +52,9 @@ class App extends Component {
 
   async fetchData() {
     const getData = await this.dataGetter.fetchPid(this.stopId);
-    this.setState({ services: getData });
+    if (!getData) return false;
     console.log(getData);
+    return this.setState({ services: getData });
   }
 
   render() {
