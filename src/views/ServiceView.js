@@ -6,7 +6,7 @@ import '../assets/styles/StationScroll.scss';
 
 export const ServiceView = ({ services, stops, departure }) => {
   const { isLandscape, theme } = useContext(State);
-  const { platform } = services[0];
+  const { platform, cars, isExpress, isLimitedStops, isBookingRequired } = services[0];
   const showPlatform = platform && !isLandscape ? 'showPlatform' : '';
   const scrollMin = isLandscape ? 5 : 8;
 
@@ -15,10 +15,19 @@ export const ServiceView = ({ services, stops, departure }) => {
       <div className="scrollContainer">
         <StationScroll stops={stops} limit={scrollMin} />
       </div>
-      <div className={`infoContainer ${showPlatform}`}>
+      <div className="infoContainer">
         <div className="titlePair platform">
           <div className="title">{platform?.title}</div>
           <div className="value">{platform?.value}</div>
+        </div>
+        <div className="badge__stack">
+          {isBookingRequired && <div className="badge__group">
+            <div className="badge badge-booking">Booked seats only</div>
+          </div>}
+          <div className="badge__group">
+            {cars && <div className="badge">{cars} cars</div>}
+            {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
+          </div>
         </div>
         {departure && <>
           <div className="titlePair">
@@ -26,6 +35,14 @@ export const ServiceView = ({ services, stops, departure }) => {
             <div className="value">{departure}</div>
           </div>
         </>}
+      </div>
+      <div className="bar__bottom">
+        <div className="badge__stack">
+          <div className="badge__group">
+            {cars && <div className="badge">{cars} cars</div>}
+            {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
+          </div>
+        </div>
       </div>
     </div>
   );
