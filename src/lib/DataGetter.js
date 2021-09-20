@@ -146,7 +146,7 @@ class DataGetter {
 
   /* eslint-disable max-depth */
   extractPidData(service, currentStopTimeInstance) {
-    if (service.realtimePattern) {
+    if (service?.realtimePattern) {
       let isLimitedStops = false;
       const isBus = service.tripInstance.trip.route.mode === 'au2:buses';
       const stationStops = [];
