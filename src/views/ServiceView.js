@@ -13,7 +13,7 @@ export const ServiceView = ({ services, stops, departure }) => {
   return (
     <div className={`scrollView ${isLandscape ? 'landscape' : ''} ${theme}`}>
       <div className="scrollContainer">
-        <StationScroll type={services[0]?.type} stops={stops} limit={scrollMin} />
+        <StationScroll stops={stops} limit={scrollMin} />
       </div>
       <div className={`infoContainer ${showPlatform}`}>
         <div className="titlePair platform">

@@ -8,10 +8,10 @@ const icons = {
   'plane': plane
 };
 
-export const StationScroll = ({ type, stops, limit, speed = 75 }) => {
+export const StationScroll = ({ stops, limit, speed = 75 }) => {
   if (!stops) return false;
   const buffer = ['', ''];
-  const stopsJoined = stops.map(x => x.station).concat(buffer);
+  const stopsJoined = stops.concat(buffer);
 
   const scroll = stops.length > limit;
   const scrollSpeed = speed * (window.innerHeight / 650);

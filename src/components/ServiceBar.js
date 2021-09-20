@@ -12,37 +12,30 @@ const icons = {
 
 export const ServiceBar = ({ service, icon, time = true }) => {
   const { serviceTitle, theme } = useContext(State);
-  const { destination, type, line, departs, booking, platform } = service;
-  const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(type.name) > -1 ? 'vertical' : '';
+  const { destination, mode, line, departs, booking, platform } = service;
+  const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'vertical' : '';
   let altIcon = null;
 
-  let [lineTo, lineVia] = destination
-    ? destination.includes('via')
-      ? destination.split(' via ')
-      : destination.split()
-    : [null, null];
-
-  if (lineVia === 'Airport') {
-    lineVia = 'Airport stations';
+  if (destination.via === 'via Airport stations') {
     altIcon = 'plane';
   }
 
   return <>
-    {time && <TimeBar title={serviceTitle} type={type.name} />}
+    {time && <TimeBar title={serviceTitle} type={mode} />}
 
     <div className={`serviceBar ${verticalStyle} ${theme}`}>
       <div className="serviceContainer">
         <div className="service">
-          <ServiceIcon icon={icon} line={line} type={type.name} />
+          <ServiceIcon icon={icon} line={line} type={mode} />
           <div className="serviceTime">{DepartureTime(departs)}</div>
         </div>
         <div className="lineText">
           <div className="serviceTime">{DepartureTime(departs)}</div>
-          <div className="lineTo">{truncateStationName(lineTo)}</div>
+          <div className="lineTo">{truncateStationName(destination.to)}</div>
           {booking
             ? <div><div className="booking">Booked seats only</div></div>
             : <div className="lineVia">
-              {lineVia && 'via ' + lineVia}
+              {destination.via}
               {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
             </div>}
         </div>

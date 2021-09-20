@@ -22,18 +22,12 @@ export const NextServicesBar = ({ services }) => {
 };
 
 const NextServiceItem = ({ service }) => {
-  let [lineTo, lineVia] = service.destination
-    ? service.destination.includes('via')
-      ? service.destination.split(' via ')
-      : service.destination.split()
-    : [null, null];
-
   return <>
     <div className="row">
-      <div className="cell">{truncateStationName(lineTo)}</div>
+      <div className="cell">{truncateStationName(service.destination.to)}</div>
       <div className="cell">{service.platform.value}</div>
       <div className="cell">{DepartureTimeCountdown(service.departs)}</div>
     </div>
-    <div className="row via">{lineVia && 'via ' + lineVia}</div>
+    <div className="row via">{service.destination.via}</div>
   </>;
 };

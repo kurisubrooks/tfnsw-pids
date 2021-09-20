@@ -7,26 +7,26 @@ export const DepartureTimeCountdown = time => {
   if (!time) return null;
 
   // 1h 54 min
-  const now = new Date().getTime();
-  const timeTilDepart = new Date(time).getTime();
-  const dist = timeTilDepart - now;
+  const now = new Date().getTime() / 1000;
+  const timeTilDepart = time - 20;
+  const secondsToGo = timeTilDepart - now;
 
-  const days = Math.floor(dist / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((dist % (1000 * 60)) / 1000);
+  const days = Math.floor(secondsToGo / (60 * 60 * 24));
+  const hours = Math.floor((secondsToGo % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((secondsToGo % (60 * 60)) / 60);
+  const seconds = Math.floor(secondsToGo % 60);
 
-  if (days > 0) {
-    return `${days}d, ${hours}hr ${minutes}m`;
-  } else if (hours > 0) {
-    return `${hours}hr ${minutes}m`;
-  } else if (minutes > 0) {
-    return `${minutes} min`;
-  } else if (seconds < 0) {
+  if (seconds < 0) {
     return null;
+  } else if (seconds <= 60) {
+    return '1 min';
+  } else if (hours <= 0) {
+    return `${minutes} min`;
+  } else if (days <= 0) {
+    return `${hours}hr ${minutes}m`;
+  } else {
+    return `${days} days`;
   }
-
-  return 'Now';
 };
 
 export const DepartureTime = time => {
@@ -42,32 +42,35 @@ export const NetworkTime = () => {
 };
 
 // DATA CONVERSION
-export const idToType = id => {
-  const typeRef = {
-    '-1': 'none',
-    '1': 'train', // train
-    '2': 'intercity', // intercity
-    '3': 'trainlink', // trainlink (xpt, ghan, etc.)
-    '5': 'bus', // bus
-    '7': 'coach', // coach
-    '9': 'coach', // coach (private)
-    '10': 'ferry', // ferry
-    '11': 'ferry', // ferry (???)
-    '12': 'ferry', // ferry (private)
-    '13': 'lightrail', // light rail
-    '14': 'bus', // replacement buses
-    '24': 'metro' // metro
+export const modeToType = (mode, isIntercity) => {
+  const type = mode.replace('au2:', '');
+  const types = {
+    'sydneytrains': 'train', // Sydney Trains
+    'intercity': 'intercity', // Sydney Trains (Intercity)
+    'nswtrains': 'trainlink', // NSW TrainLink
+    'lightrail': 'lightrail', // Sydney Light Rail
+    'ferries': 'ferry', // Sydney Ferries
+    'metro': 'metro', // Sydney Metro
+    'tempbuses': 'bus', // Bus
+    'buses': 'bus' // Bus
   };
 
-  return { id, name: typeRef[id] || null };
+  if (type === 'sydneytrains' && isIntercity) {
+    return types.intercity;
+  }
+
+  return types[type];
 };
 
 export const lineColour = (line, type) => {
   const lineColours = {
+    // trains
     'T1': '#f89c1d', 'T2': '#0097cd', 'T3': '#f36e22', 'T4': '#015aa5', 'T5': '#c32191', 'T7': '#6f808e', 'T8': '#02964c', 'T9': '#d21f2f',
 
+    // ferries
     'F1': '#04764a', 'F2': '#234635', 'F3': '#6b8b4e', 'F4': '#c4d552', 'F5': '#376044', 'F6': '#4ca75b', 'F7': '#4fad8a', 'F8': '#586132', 'F9': '#78b856',
 
+    // light rail
     'L1': '#99202b', 'L2': '#cb232b', 'L3': '#631835'
   };
 
@@ -93,15 +96,23 @@ export const nameTransform = name => {
 
 export const truncateStationName = name => {
   const names = {
+    'Bondi Junction': 'Bondi Jn',
+    'Sydney Domestic Airport': 'Domestic Airport',
+    'Sydney International Airport': 'International Airport',
     'Macquarie Fields': 'Macquarie Flds',
     'Macquarie University': 'Macquarie Uni',
     'Hawkesbury River': 'Hawkesbury Rvr',
+    'Mount Colah': 'Mt Colah',
+    'Mount Druitt': 'Mt Druitt',
+    'Mount Kuring-gai': 'Mt Kuring-gai',
     'Mount Victoria': 'Mt Victoria',
     'Newcastle Interchange': 'Newcastle Intg',
     'North Strathfield': 'N Strathfield',
     'North Wollongong': 'N Wollongong',
     'Sydney Olympic Park': 'Olympic Park',
-    'Shellharbour Junction': 'Shellhbr Jn'
+    'Shellharbour Junction': 'Shellhbr Jn',
+    'Shellharbour': 'Shellhbr Jn',
+    'Port Kembla North': 'Port Kembla N'
   };
 
   return names[name] || name;
