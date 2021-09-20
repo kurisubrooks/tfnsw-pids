@@ -40,7 +40,7 @@ export const ServiceBar = ({ service, icon, time = true }) => {
           <div className="serviceTime">{DepartureTime(departs)}</div>
           <div className="lineTo">{truncateStationName(lineTo)}</div>
           {booking
-            ? <div className="booking">Booked seats only</div>
+            ? <div><div className="booking">Booked seats only</div></div>
             : <div className="lineVia">
               {lineVia && 'via ' + lineVia}
               {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
