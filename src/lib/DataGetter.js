@@ -70,17 +70,15 @@ class DataGetter {
     return res;
   }
 
-  async fetchPid(stopId) {
+  async fetchPid(stopId, servicesLimit = 2) {
     const stopIds = stopId.split(',');
     const depReq = await this.getDepartures({
       ts: new Date().getTime() / 1000,
       stopId, offset: 0, limit: 15, excludeCancelled: true,
-      modes: 'au2:sydneytrains,au2:nswtrains' // excl. bus,coach
+      modes: 'au2:sydneytrains,au2:nswtrains,au2:ferries' // excl. bus,coach
     });
 
     const now = new Date().getTime() / 1000;
-    let pidData, nextPidData, dvaData;
-
     const departures = depReq.response.departures
       // remove terminating and continued services
       .filter(dep => !dep.stopTimeInstance.lastStop || !dep.tripInstance.trip.tripContinues)
@@ -108,68 +106,42 @@ class DataGetter {
       // remove departed services
       .filter(dep => dep.stopTimeInstance.departure.time < (now + 60 * 60 * 24));
 
-    // Next Service
+    // Next Services
     if (departures.length > 0) {
-      const nextService = await this.getTripInstance(departures[0].tripInstance._path);
-      pidData = this.extractPidData(nextService.response, departures[0].stopTimeInstance);
-      // const dvaReq = await this.getDva(departures[0].stopTimeInstance._path);
-      // dvaData = dvaReq.response.dva;
-    }
-
-    // Following Services
-    if (departures.length > 1) {
-      const followingServices = await this.getTripInstance(departures[1].tripInstance._path);
-      nextPidData = this.extractPidData(followingServices.response, departures[1].stopTimeInstance);
-    }
-
-    /*
-    {
-      id: i.realtimeTripId,
-      type: idToType(i.transportation.iconId),
-      class: i.transportation.product.class,
-      departs: i.departureTimeEstimated || i.departureTimePlanned,
-      line: i.transportation.disassembledName,
-      destination: i.transportation.destination.name,
-      origin: i.transportation.origin.name,
-      platform: { title: platform?.[1], value: platform?.[2] },
-      booking: i.isBookingRequired,
-      cancelled: i.isCancelled,
-      stops: i.onwardLocations.map(x => {
+      // get (up to) the next 3 departures
+      const promises = departures.slice(0, servicesLimit + 1).map(async i => {
+        const data = await this.getTripInstance(i.tripInstance._path);
+        const res = this.extractPidData(data.response, i.stopTimeInstance);
         return {
-          station: nameTransform(x.disassembledName || x.name),
-          stationId: x.parentId,
-          // platform: x.platform?.replace('Platform ', ''),
-          departs: x.departureTimeEstimated || x.departureTimePlanned,
-          arrives: x.arrivalTimeEstimated || x.arrivalTimePlanned
+          id: res.service.tripInstance.trip.id,
+          cars: res.cars,
+          line: res.service.tripInstance.trip.route.name,
+          mode: modeToType(res.service.tripInstance.trip.route.mode, res.isIntercity),
+          departs: res.stopTimeInstance.departure.time,
+          serviceTime: (res.stopTimeInstance.departure.time - (res.stopTimeInstance.departure.delay || 0)) * 1000,
+          destination: { to: res.headsign.headline, via: res.headsign.subtitle },
+          platform: { title: res.stop.disassembled.platformType, value: res.stop.disassembled.platformName },
+
+          doesNotStop: res.doesNotStop,
+          isBookingRequired: res.isBookingRequired,
+          isExpress: res.isExpress,
+          isLimitedStops: res.isLimitedStops,
+          isIntercity: res.isIntercity,
+
+          stops: res.stations.map(station => nameTransform(station.fullName)),
+
+          _anyTrip: {
+            stop: depReq.response.stop,
+            departures
+          }
         };
-      })
+      });
+
+      const services = await Promise.all(promises);
+      return services;
     }
-    */
 
-    return {
-      id: pidData.service.tripInstance.trip.id,
-      line: pidData.service.tripInstance.trip.route.name,
-      mode: modeToType(pidData.service.tripInstance.trip.route.mode, pidData.isIntercity),
-      departs: pidData.stopTimeInstance.departure.time,
-      serviceTime: (pidData.stopTimeInstance.departure.time - (pidData.stopTimeInstance.departure.delay || 0)) * 1000,
-      destination: { to: pidData.headsign.headline, via: pidData.headsign.subtitle },
-      platform: { title: pidData.stop.disassembled.platformType, value: pidData.stop.disassembled.platformName },
-
-      cars: pidData.cars,
-      doesNotStop: pidData.doesNotStop,
-      isBookingRequired: pidData.isBookingRequired,
-      isExpress: pidData.isExpress,
-      isLimitedStops: pidData.isLimitedStops,
-      isIntercity: pidData.isIntercity,
-
-      stops: pidData.stations.map(station => nameTransform(station.fullName)),
-      dva: dvaData,
-
-      _anyTrip: {
-        stop: depReq.response.stop,
-        departures, pidData, nextPidData, dvaData
-      }
-    };
+    return [];
   }
 
   /* eslint-disable max-depth */

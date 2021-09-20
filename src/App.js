@@ -50,7 +50,7 @@ class App extends Component {
 
   async fetchData() {
     const getData = await this.dataGetter.fetchPid(this.stopId);
-    this.setState({ services: [getData] });
+    this.setState({ services: getData });
     console.log(getData);
   }
 
