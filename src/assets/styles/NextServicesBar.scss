@@ -35,16 +35,19 @@
 
       .cell {
         text-align: center;
-        width: 25%;
+        width: 17.5%;
 
         &:first-child {
-          width: 50%;
+          width: 55%;
           text-align: left;
           -webkit-text-stroke: 0;
         }
 
         &:last-child {
+          width: 27.5%;
           text-align: right;
+          white-space: nowrap;
+          float: right;
         }
       }
     }
