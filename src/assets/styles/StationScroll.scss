@@ -18,6 +18,10 @@
       background: $darkBackground;
     }
 
+    .bar__bottom {
+      background: $darkBackground;
+    }
+
     .badge__stack .badge__group .badge {
       color: $fontColour;
       background: $background;
@@ -69,7 +73,7 @@
     bottom: -5px;
     width: 100%;
     z-index: 1;
-    background: $darkBackground;
+    background: $background;
     @media #{$horizontal} { display: none; }
     padding: 0.5em 0;
 

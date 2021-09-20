@@ -7,7 +7,6 @@ import '../assets/styles/StationScroll.scss';
 export const ServiceView = ({ services, stops, departure }) => {
   const { isLandscape, theme } = useContext(State);
   const { platform, cars, isExpress, isLimitedStops, isBookingRequired } = services[0];
-  const showPlatform = platform && !isLandscape ? 'showPlatform' : '';
   const scrollMin = isLandscape ? 5 : 8;
 
   return (

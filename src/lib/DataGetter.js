@@ -112,6 +112,7 @@ class DataGetter {
       const promises = departures.slice(0, servicesLimit + 1).map(async i => {
         const data = await this.getTripInstance(i.tripInstance._path);
         const res = this.extractPidData(data.response, i.stopTimeInstance);
+        if (!res) return null;
         return {
           id: res.service.tripInstance.trip.id,
           cars: res.cars,
