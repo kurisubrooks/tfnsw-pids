@@ -51,6 +51,7 @@ export const modeToType = (mode, isIntercity) => {
     'lightrail': 'lightrail', // Sydney Light Rail
     'ferries': 'ferry', // Sydney Ferries
     'metro': 'metro', // Sydney Metro
+    'nswcoaches': 'coach', // Coach
     'tempbuses': 'bus', // Bus
     'buses': 'bus' // Bus
   };
