@@ -16,7 +16,7 @@ export const ServiceBar = ({ service, icon, time = true }) => {
   const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'vertical' : '';
   let altIcon = null;
 
-  if (destination.via === 'via Airport stations') {
+  if (destination?.via === 'via Airport stations') {
     altIcon = 'plane';
   }
 
@@ -31,11 +31,11 @@ export const ServiceBar = ({ service, icon, time = true }) => {
         </div>
         <div className="lineText">
           <div className="serviceTime">{DepartureTime(serviceTime)}</div>
-          <div className="lineTo">{truncateStationName(destination.to)}</div>
+          <div className="lineTo">{truncateStationName(destination?.to)}</div>
           {isBookingRequired
             ? <div><div className="booking">Booked seats only</div></div>
             : <div className="lineVia">
-              {destination.via}
+              {destination?.via}
               {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
             </div>}
         </div>
