@@ -16,17 +16,19 @@ export const DepartureTimeCountdown = time => {
   const minutes = Math.floor((secondsToGo % (60 * 60)) / 60);
   const seconds = Math.floor(secondsToGo % 60);
 
-  if (seconds < 0) {
-    return null;
-  } else if (seconds <= 60) {
-    return '1 min';
-  } else if (hours <= 0) {
-    return `${minutes} min`;
-  } else if (days <= 0) {
-    return `${hours}hr ${minutes}m`;
-  } else {
+  if (days > 0) {
     return `${days} days`;
+  } else if (hours > 0) {
+    return `${hours}hr ${minutes}m`;
+  } else if (minutes > 0) {
+    return `${minutes} min`;
+  } else if (seconds >= 0 && seconds <= 60) {
+    return '1 min';
+  } else if (seconds < 0) {
+    return null;
   }
+
+  return `${days}d ${hours}hr ${minutes}m ${seconds}s`;
 };
 
 export const DepartureTime = time => {
