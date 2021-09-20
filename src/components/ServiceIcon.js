@@ -4,6 +4,7 @@ import '../assets/styles/ServiceBar.scss';
 const typeToText = {
   'train': 'T',
   'intercity': 'T',
+  'trainlink': 'T',
   'bus': 'B',
   'coach': 'C',
   'metro': 'M',
@@ -22,7 +23,7 @@ export const ServiceIcon = ({ line, type, icon }) => {
   }
 
   if (!line) type = 'blank';
-  const isRound = ['intercity', 'coach', 'metro'].indexOf(type) > -1;
+  const isRound = ['intercity', 'trainlink', 'coach', 'metro'].indexOf(type) > -1;
   const colour = lineColour(line, type);
   const size = isRound && type !== 'metro' ? 'small' : '';
   const text = isRound ? typeToText[type] : line;

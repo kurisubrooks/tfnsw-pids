@@ -74,7 +74,7 @@ export const lineColour = (line, type) => {
   const serviceColours = {
     'train': '#e65010',
     'intercity': '#f88934',
-    'trainlink': '#de4126',
+    'trainlink': '#e65010',
     'lightrail': '#e61e30',
     'bus': '#00ade8',
     'coach': '#742283',
