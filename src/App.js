@@ -10,7 +10,7 @@ import { StateManager } from './state';
 // Constants
 const params = new URLSearchParams(window.location.search);
 const useDebugView = params.has('debugView') || false;
-const stopId = params.get('stop') || 200060;
+const stopId = params.get('stop') || '200060';
 
 // 200060 Central
 // 206710 Chatswood
