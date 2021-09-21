@@ -14,17 +14,9 @@
   }
 
   &.dark {
-    .info_container {
-      background: $darkBackground;
-    }
-
+    .info_container,
     .bar_container {
       background: $darkBackground;
-    }
-
-    .badge_stack .badge_group .badge {
-      color: $fontColour;
-      background: $background;
     }
 
     .station_scroll .station .icon {
@@ -54,6 +46,12 @@
       bottom: $screenPadding;
     }
 
+    @media #{$vertical} {
+      .badge_stack {
+        display: none;
+      }
+    }
+
     .titlePair .value {
       font-size: 2em;
     }
@@ -61,10 +59,6 @@
     .platform {
       display: block;
       @media #{$horizontal} { display: none; }
-    }
-
-    .badge_stack {
-      @media #{$vertical} { display: none; }
     }
   }
 
@@ -74,20 +68,8 @@
     width: 100%;
     z-index: 1;
     background: $background;
-    @media #{$horizontal} { display: none; }
     padding: 0.5em 0;
-
-    .badge_stack {
-      flex-direction: row;
-      .badge_group {
-        flex-direction: row;
-        width: auto;
-        .badge {
-          margin: 0 0.5em 0 0;
-          min-width: 3em;
-        }
-      }
-    }
+    @media #{$horizontal} { display: none; }
   }
 
   .station_scroll {
@@ -116,36 +98,6 @@
         font-size: 0.5em;
       }
     }
-  }
-
-  .badge_stack {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: left;
-
-    .badge_group {
-      display: flex;
-      flex-direction: column;
-      width: fit-content;
-
-      .badge {
-        color: $darkFontColour;
-        font-weight: 500;
-        line-height: 1em;
-        background: #222;
-        margin-bottom: 0.35em;
-        padding: 0.2em 0.5em;
-        min-width: 3.5em;
-
-        &.badge-booking {
-          background: $sydtrains;
-          color: $darkFontColour;
-        }
-      }
-    }
-
-    @media #{$horizontal} { display: flex; }
   }
 }
 

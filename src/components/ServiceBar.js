@@ -1,6 +1,7 @@
 import React, { Component, useContext } from 'react';
 import { ServiceIcon } from './ServiceIcon';
 import { NetworkTime, DepartureTime, truncateStationName, lineColour } from '../util';
+import { Badges } from './Badge';
 import State from '../state';
 
 import plane from '../assets/icons/airport.svg';
@@ -34,7 +35,7 @@ export const ServiceBar = ({ service, icon, time = true }) => {
           <div className="service_time">{DepartureTime(serviceTime)}</div>
           <div className="line_to">{truncateStationName(destination?.to)}</div>
           {isBookingRequired
-            ? <div><div className="booking">Booked seats only</div></div>
+            ? <Badges hasBooking={true} />
             : <div className="line_via">
               {destination?.via}
               {altIcon && <img className="icon" src={icons[altIcon]} alt="" />}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { StationScroll } from '../components/StationScroll';
+import { Badges } from '../components/Badge';
 import State from '../state';
 
 import '../assets/styles/StationScroll.scss';
@@ -19,15 +20,10 @@ export const ServiceView = ({ services, stops, departure }) => {
           <div className="title">{platform?.title}</div>
           <div className="value">{platform?.value}</div>
         </div>
-        <div className="badge_stack">
-          {isBookingRequired && <div className="badge_group">
-            <div className="badge badge-booking">Booked seats only</div>
-          </div>}
-          <div className="badge_group">
-            {cars && <div className="badge">{cars} cars</div>}
-            {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
-          </div>
-        </div>
+        <Badges hasBooking={isBookingRequired} items={[
+          cars && cars + ' cars',
+          isLimitedStops !== null && (isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops')
+        ]} />
         {departure && <>
           <div className="titlePair">
             <div className="title">Departs</div>
@@ -36,12 +32,10 @@ export const ServiceView = ({ services, stops, departure }) => {
         </>}
       </div>
       <div className="bar_container">
-        <div className="badge_stack">
-          <div className="badge_group">
-            {cars && <div className="badge">{cars} cars</div>}
-            {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
-          </div>
-        </div>
+        <Badges hasBooking={isBookingRequired} items={[
+          cars && cars + ' cars',
+          isLimitedStops !== null && (isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops')
+        ]} />
       </div>
     </div>
   );

@@ -19,22 +19,29 @@
 
     .row {
       display: flex;
-      font-size: 1.65em;
+      font-size: 1.85em;
       justify-content: space-between;
 
       &:first-child {
         font-size: 1.2em;
+        margin-bottom: 0.1em;
       }
 
       &.row-primary {
-        font-weight: 500;
+        font-weight: 400;
+        -webkit-text-stroke: 0.5px;
       }
 
       &.via {
+        justify-content: flex-start;
         font-size: 1.2em;
         height: 1.2em;
+        margin-top: 0.1em;
+
         .cell { width: 100%; }
-        &:not(:last-child) { margin-bottom: 0.5em;}
+        .via-text { margin-right: 0.5em; }
+        .badge_stack { font-size: 0.75em; }
+        &:not(:last-child) { margin-bottom: 0.2em;}
       }
 
       .cell {

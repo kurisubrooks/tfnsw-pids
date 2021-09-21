@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { DepartureTimeCountdown, truncateStationName } from '../util';
+import { Badges } from './Badge';
 import State from '../state';
 import '../assets/styles/NextServicesBar.scss';
 
@@ -22,12 +23,16 @@ export const NextServicesBar = ({ services }) => {
 };
 
 const NextServiceItem = ({ service }) => {
+  const serviceBadge = service.isLimitedStops !== null && (service.isExpress ? 'Express' : service.isLimitedStops ? 'Limited Stops' : 'All Stops');
   return <>
     <div className="row row-primary">
       <div className="cell">{truncateStationName(service.destination.to)}</div>
       <div className="cell">{service.platform.value}</div>
       <div className="cell">{DepartureTimeCountdown(service.departs)}</div>
     </div>
-    <div className="row via">{service.destination.via}</div>
+    <div className="row via">
+      {service.destination.via && <div className="via-text">{service.destination.via}</div>}
+      <Badges items={[serviceBadge]} />
+    </div>
   </>;
 };
