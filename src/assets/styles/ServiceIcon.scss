@@ -1,0 +1,57 @@
+@import "./_variables.scss";
+
+.service_icon {
+  margin-right: 1em;
+
+  .icon-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+
+    font-size: 3.5em;
+    font-weight: 500;
+    color: #FFF;
+    border-radius: 0.2em;
+
+    @media #{$horizontal} { font-size: 3em; }
+
+    &.icon-bus {
+      font-size: 2.5em;
+      width: 2.1em;
+      height: 2.1em;
+      background-color: '#00ade8';
+    }
+  }
+
+  .icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.45em;
+    height: 1.45em;
+
+    font-size: 3em;
+    font-weight: 700;
+    color: #FFF;
+
+    border: 0.1em solid #FFFFFF;
+    background-color: $intercity;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+
+    &.icon-small {
+      width: 1.25em;
+      height: 1.25em;
+      font-size: 2.5em;
+      border-width: 0.125em;
+
+      @media #{$horizontal} {
+        width: 1.25em;
+        height: 1.25em;
+        font-size: 3em;
+      }
+    }
+  }
+}

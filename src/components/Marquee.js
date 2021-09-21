@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import '../assets/styles/marquee.scss';
+import '../assets/styles/StationScroll.scss';
 
 /*
   Forked from Justin Chu under the MIT License
@@ -55,12 +55,12 @@ const Marquee = ({ style = {}, className = '', play = true, direction = 'up', sp
     <div
       ref={containerRef}
       style={{ ...style }}
-      className={className + ' marquee-container'}
+      className={className + ' marquee'}
     >
-      <div ref={marqueeRef} className="marquee" style={styles}>
+      <div ref={marqueeRef} className="marquee_container" style={styles}>
         {children}
       </div>
-      <div style={styles} className="marquee">
+      <div style={styles} className="marquee_container">
         {children}
       </div>
     </div>

@@ -17,7 +17,7 @@ export const StationScroll = ({ stops, limit, speed = 75 }) => {
   const scrollSpeed = speed * (window.innerHeight / 650);
 
   return (
-    <div className="stationScroll">
+    <div className="station_scroll">
       {scroll ? <>
         <Marquee speed={scrollSpeed}>
           {stopsJoined.map((station, index) => <Station key={index} name={station} />)}
@@ -41,7 +41,7 @@ const Station = ({ name }) => {
   return <>
     <div className={classes}>
       {name}
-      {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
+      {altIcon && <img className="icon" src={icons[altIcon]} alt="" />}
     </div>
   </>;
 };

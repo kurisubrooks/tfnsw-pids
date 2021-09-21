@@ -1,6 +1,6 @@
 @import "_variables.scss";
 
-.scrollView {
+.scroll_view {
   overflow: hidden;
   position: relative;
   display: flex;
@@ -14,29 +14,29 @@
   }
 
   &.dark {
-    .infoContainer {
+    .info_container {
       background: $darkBackground;
     }
 
-    .bar__bottom {
+    .bar_container {
       background: $darkBackground;
     }
 
-    .badge__stack .badge__group .badge {
+    .badge_stack .badge_group .badge {
       color: $fontColour;
       background: $background;
     }
 
-    .stationScroll .station .altIcon {
+    .station_scroll .station .icon {
       filter: invert(1);
     }
   }
 
-  .scrollContainer {
+  .scroll_container {
     flex: 1;
   }
 
-  .infoContainer {
+  .info_container {
     display: flex;
     position: absolute;
     z-index: 2;
@@ -63,12 +63,12 @@
       @media #{$horizontal} { display: none; }
     }
 
-    .badge__stack {
+    .badge_stack {
       @media #{$vertical} { display: none; }
     }
   }
 
-  .bar__bottom {
+  .bar_container {
     position: absolute;
     bottom: -5px;
     width: 100%;
@@ -77,9 +77,9 @@
     @media #{$horizontal} { display: none; }
     padding: 0.5em 0;
 
-    .badge__stack {
+    .badge_stack {
       flex-direction: row;
-      .badge__group {
+      .badge_group {
         flex-direction: row;
         width: auto;
         .badge {
@@ -90,7 +90,7 @@
     }
   }
 
-  .stationScroll {
+  .station_scroll {
     display: flex;
     flex-direction: column;
     font-weight: 400;
@@ -105,7 +105,7 @@
       @media #{$mobile} { -webkit-text-stroke: 0.25px; }
       @media #{$tablet} { -webkit-text-stroke: 0.5px; }
 
-      .altIcon {
+      .icon {
         width: 0.7em;
         height: 0.7em;
         padding: 0.15em 0 0 0.25em;
@@ -118,13 +118,13 @@
     }
   }
 
-  .badge__stack {
+  .badge_stack {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: left;
 
-    .badge__group {
+    .badge_group {
       display: flex;
       flex-direction: column;
       width: fit-content;
@@ -146,5 +146,37 @@
     }
 
     @media #{$horizontal} { display: flex; }
+  }
+}
+
+/* @license
+  Forked from Justin Chu under the MIT License
+  https://github.com/justin-chu/react-fast-marquee
+*/
+.marquee {
+  overflow-y: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative;
+
+  .marquee_container {
+    flex: 0 0 auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+    animation-play-state: var(--play);
+    animation-delay: var(--delay);
+    animation-direction: var(--direction);
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
   }
 }

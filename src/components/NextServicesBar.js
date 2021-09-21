@@ -7,7 +7,7 @@ export const NextServicesBar = ({ services }) => {
   const { theme } = useContext(State);
   const servicesLimit = 2;
 
-  return <div className={`nextServices ${theme}`}>
+  return <div className={`following_services ${theme}`}>
     <div className="rows">
       <div className="row">
         <div className="cell">Next Services</div>
@@ -23,7 +23,7 @@ export const NextServicesBar = ({ services }) => {
 
 const NextServiceItem = ({ service }) => {
   return <>
-    <div className="row">
+    <div className="row row-primary">
       <div className="cell">{truncateStationName(service.destination.to)}</div>
       <div className="cell">{service.platform.value}</div>
       <div className="cell">{DepartureTimeCountdown(service.departs)}</div>

@@ -4,6 +4,7 @@ import { NetworkTime, DepartureTime, truncateStationName, lineColour } from '../
 import State from '../state';
 
 import plane from '../assets/icons/airport.svg';
+import '../assets/styles/TimeBar.scss';
 import '../assets/styles/ServiceBar.scss';
 
 const icons = {
@@ -13,7 +14,7 @@ const icons = {
 export const ServiceBar = ({ service, icon, time = true }) => {
   const { serviceTitle, theme } = useContext(State);
   const { destination, mode, line, serviceTime, isBookingRequired, platform } = service;
-  const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'vertical' : '';
+  const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'isIntercity' : '';
   let altIcon = null;
 
   if (destination?.via === 'via Airport stations') {
@@ -23,20 +24,20 @@ export const ServiceBar = ({ service, icon, time = true }) => {
   return <>
     {time && <TimeBar title={serviceTitle} type={mode} />}
 
-    <div className={`serviceBar ${verticalStyle} ${theme}`}>
-      <div className="serviceContainer">
+    <div className={`service_bar ${verticalStyle} ${theme}`}>
+      <div className="service_container">
         <div className="service">
           <ServiceIcon icon={icon} line={line} type={mode} />
-          <div className="serviceTime">{DepartureTime(serviceTime)}</div>
+          <div className="service_time">{DepartureTime(serviceTime)}</div>
         </div>
-        <div className="lineText">
-          <div className="serviceTime">{DepartureTime(serviceTime)}</div>
-          <div className="lineTo">{truncateStationName(destination?.to)}</div>
+        <div className="line_stack">
+          <div className="service_time">{DepartureTime(serviceTime)}</div>
+          <div className="line_to">{truncateStationName(destination?.to)}</div>
           {isBookingRequired
             ? <div><div className="booking">Booked seats only</div></div>
-            : <div className="lineVia">
+            : <div className="line_via">
               {destination?.via}
-              {altIcon && <img className="altIcon" src={icons[altIcon]} alt="" />}
+              {altIcon && <img className="icon" src={icons[altIcon]} alt="" />}
             </div>}
         </div>
       </div>
@@ -75,13 +76,11 @@ export class TimeBar extends Component {
       ? 'train' : this.props.type;
 
     return (
-      <div className="timeBar" style={{ backgroundColor: lineColour(null, type) }}>
-        <div className="nextService">
-          {this.props.title}
-        </div>
-        <div className="timeContainer">
-          <div className="timeText">Time Now</div>
-          <div className="timeNow">{this.state.time}</div>
+      <div className="time_bar" style={{ backgroundColor: lineColour(null, type) }}>
+        <div className="title">{this.props.title}</div>
+        <div className="time_container">
+          <div className="time_text">Time Now</div>
+          <div className="time_now">{this.state.time}</div>
         </div>
       </div>
     );

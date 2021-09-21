@@ -1,5 +1,5 @@
 import { lineColour } from '../util';
-import '../assets/styles/ServiceBar.scss';
+import '../assets/styles/ServiceIcon.scss';
 
 const typeToText = {
   'train': 'T',
@@ -37,9 +37,11 @@ export const ServiceIcon = ({ line, type, icon }) => {
 };
 
 const Icon = ({ shape, text, size, colour }) => {
-  const classes = `${shape} ${size}`;
+  const shapeClass = `icon-${shape}`;
+  const sizeClass = `icon-${size}`;
+  const classes = `${shapeClass} ${sizeClass}`;
 
-  return <div className="icon">
+  return <div className="service_icon">
     <div className={classes} style={{ backgroundColor: colour }}>{text}</div>
   </div>;
 };

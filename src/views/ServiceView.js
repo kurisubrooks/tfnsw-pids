@@ -10,20 +10,20 @@ export const ServiceView = ({ services, stops, departure }) => {
   const scrollMin = isLandscape ? 5 : 8;
 
   return (
-    <div className={`scrollView ${isLandscape ? 'landscape' : ''} ${theme}`}>
-      <div className="scrollContainer">
+    <div className={`scroll_view ${theme}`}>
+      <div className="scroll_container">
         <StationScroll stops={stops} limit={scrollMin} />
       </div>
-      <div className="infoContainer">
+      <div className="info_container">
         <div className="titlePair platform">
           <div className="title">{platform?.title}</div>
           <div className="value">{platform?.value}</div>
         </div>
-        <div className="badge__stack">
-          {isBookingRequired && <div className="badge__group">
+        <div className="badge_stack">
+          {isBookingRequired && <div className="badge_group">
             <div className="badge badge-booking">Booked seats only</div>
           </div>}
-          <div className="badge__group">
+          <div className="badge_group">
             {cars && <div className="badge">{cars} cars</div>}
             {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
           </div>
@@ -35,9 +35,9 @@ export const ServiceView = ({ services, stops, departure }) => {
           </div>
         </>}
       </div>
-      <div className="bar__bottom">
-        <div className="badge__stack">
-          <div className="badge__group">
+      <div className="bar_container">
+        <div className="badge_stack">
+          <div className="badge_group">
             {cars && <div className="badge">{cars} cars</div>}
             {isLimitedStops !== null && <div className="badge">{isExpress ? 'Express' : isLimitedStops ? 'Limited Stops' : 'All Stops'}</div>}
           </div>

@@ -1,0 +1,39 @@
+@import "./_variables.scss";
+
+.time_bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: $sydtrains;
+  color: #FFFFFF;
+  padding: 0.4em $screenPadding 0.2em;
+
+  @media #{$horizontal} {
+    padding: 0.4em $horizontalScreenPadding 0.2em;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  .time_container {
+    display: flex;
+
+    .time_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      font-size: 1.4em;
+      -webkit-text-stroke: 0.25px;
+
+      padding-bottom: 0.1em;
+      margin-right: 0.4em;
+    }
+
+    .time_now {
+      font-size: 2em;
+      font-weight: 500;
+    }
+  }
+}
