@@ -10,7 +10,7 @@ export const Badges = ({ items, hasBooking }) => {
       <BadgeItem isBooking={true} text="Booked seats only" />
     </div>}
     {items?.length > 0 && <div className="badge_group">
-      {items.map(i => <BadgeItem text={i} />)}
+      {items.map(i => <BadgeItem text={i} key={i} />)}
     </div>}
   </div>;
 };
