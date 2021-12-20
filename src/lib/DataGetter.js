@@ -30,6 +30,7 @@ class DataGetter {
       const url = this.proxy.url + `?url=${encodeURIComponent(reqUrl)}`;
       const response = await fetch(url, this.proxy.fetchOptions);
       const body = await response.json();
+      console.log('Response', body.response);
       return body;
     } catch(error) {
       return ErrorFormatter.format(error);
@@ -75,7 +76,7 @@ class DataGetter {
     const depReq = await this.getDepartures({
       ts: new Date().getTime() / 1000,
       stopId, offset: 0, limit: 15, excludeCancelled: true,
-      modes: 'au2:sydneytrains,au2:nswtrains,au2:ferries' // excl. bus,coach
+      modes: 'au2:sydneytrains,au2:nswtrains,au2:metro' // excl. bus,coach
     });
 
     const now = new Date().getTime() / 1000;
