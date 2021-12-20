@@ -5,11 +5,12 @@
   margin: 1em $screenPadding 0.5em;
   border-bottom: 0.1em solid $fontColour;
   border-color: $fontColour;
-  padding-bottom: 1em;
+  padding-bottom: 0.75em;
 
   @media #{$horizontal} {
     height: 4.5em;
     margin: 1em $horizontalScreenPadding 0.5em;
+    padding-bottom: 1em;
   }
 
   &.dark {
@@ -34,8 +35,7 @@
       .service {
         display: flex;
         align-items: center;
-        margin-bottom: 0.25em;
-        @media #{$horizontal} { margin: 0; }
+        @media #{$vertical} { margin-bottom: 0.25em; }
       }
 
       .service_time {
