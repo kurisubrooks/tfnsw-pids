@@ -100,6 +100,7 @@ export const nameTransform = name => {
 export const truncateStationName = name => {
   const names = {
     'Bondi Junction': 'Bondi Jn',
+    'Central': 'Central (i)',
     'Sydney Domestic Airport': 'Domestic Airport',
     'Sydney International Airport': 'International Airport',
     'Macquarie Fields': 'Macquarie Flds',
