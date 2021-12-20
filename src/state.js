@@ -3,13 +3,11 @@ const Context = React.createContext({});
 export const Provider = Context.Provider;
 export default Context;
 
-const urlParams = new URLSearchParams(window.location.search);
-
 export class StateManager extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: urlParams.get('theme') === 'dark' ? 'dark' : 'light',
+      theme: props.theme,
       serviceTitle: null,
       isLandscape: null
     };

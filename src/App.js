@@ -11,6 +11,7 @@ import { StateManager } from './state';
 const params = new URLSearchParams(window.location.search);
 const useDebugView = params.has('debugView') || false;
 const stopId = params.get('stop') || '200060';
+const theme = params.get('theme') === 'dark' ? 'dark' : 'light';
 
 // 200060 Central
 // 206710 Chatswood
@@ -60,7 +61,7 @@ class App extends Component {
   }
 
   render() {
-    return <StateManager>
+    return <StateManager theme={theme}>
       {this.state.error
         ? <div>Error: {this.state.error}</div>
         : useDebugView
