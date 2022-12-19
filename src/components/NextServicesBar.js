@@ -15,8 +15,9 @@ export const NextServicesBar = ({ services }) => {
         <div className="cell">Platform</div>
         <div className="cell">Departs</div>
       </div>
-      {services.slice(1, servicesLimit + 1).map(i =>
-        <NextServiceItem service={i} key={i.id} />
+      {services.slice(1, servicesLimit + 1).map(i => {
+        return <NextServiceItem service={i} key={i.id ? i.id : Math.random()} />;
+      }
       )}
     </div>
   </div>;

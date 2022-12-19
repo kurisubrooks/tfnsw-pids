@@ -43,7 +43,7 @@ export const ServiceIcon = ({ line, type, icon }) => {
   // Pre-determined Icons
   if (icon) {
     if (icon === 'information') {
-      return <NewIcon icon="information" />;
+      return <NewIcon icon="information" isLarge={true} />;
     } else if (icon === 'outofservice') {
       return <NewIcon icon="donotboard" />;
     }
@@ -57,9 +57,10 @@ export const ServiceIcon = ({ line, type, icon }) => {
   return <NewIcon icon={text} isSmall={isSmall} />;
 };
 
-const NewIcon = ({ icon, isSmall }) => {
+const NewIcon = ({ icon, isSmall, isLarge }) => {
   if (!icon) icon = 'blank';
   const classes = ['service_icon'];
   if (isSmall) classes.push('small');
+  if (isLarge) classes.push('large');
   return <img className={classes.join(' ')} src={icons[icon]} alt="" />;
 };

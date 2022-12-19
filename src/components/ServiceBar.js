@@ -16,16 +16,18 @@ export const ServiceBar = ({ service, icon, time = true }) => {
   const { serviceTitle, theme } = useContext(State);
   const { destination, mode, line, serviceTime, isBookingRequired, platform } = service;
   const verticalStyle = ['intercity', 'trainlink', 'coach'].indexOf(mode) > -1 ? 'isIntercity' : '';
+  const indicatorIsHidden = service.doesNotStop;
   let altIcon = null;
+  const barIsHidden = !time || indicatorIsHidden;
 
   if (destination?.via === 'via Airport stations') {
     altIcon = 'plane';
   }
 
   return <>
-    {time && <TimeBar title={serviceTitle} type={mode} />}
+    {!barIsHidden && <TimeBar title={serviceTitle} type={mode} />}
 
-    <div className={`service_bar ${verticalStyle} ${theme}`}>
+    {!indicatorIsHidden && <div className={`service_bar ${verticalStyle} ${theme}`}>
       <div className="service_container">
         <div className="service">
           <ServiceIcon icon={icon} line={line} type={mode} />
@@ -48,7 +50,7 @@ export const ServiceBar = ({ service, icon, time = true }) => {
           <div className="value">{platform?.value}</div>
         </div>
       </div>}
-    </div>
+    </div>}
   </>;
 };
 
@@ -80,7 +82,7 @@ export class TimeBar extends Component {
       <div className="time_bar" style={{ backgroundColor: lineColour(null, type) }}>
         <div className="title">{this.props.title}</div>
         <div className="time_container">
-          <div className="time_text">Time Now</div>
+          <div className="time_text">Time now</div>
           <div className="time_now">{this.state.time}</div>
         </div>
       </div>

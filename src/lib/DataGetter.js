@@ -73,16 +73,25 @@ class DataGetter {
 
   async fetchPid(stopId, servicesLimit = 2) {
     const stopIds = stopId.split(',');
-    const depReq = await this.getDepartures({
-      ts: new Date().getTime() / 1000,
-      stopId, offset: 0, limit: 15, excludeCancelled: true,
-      modes: 'au2:sydneytrains,au2:nswtrains,au2:metro' // excl. bus,coach
-    });
+    let depReq;
+    try {
+      depReq = await this.getDepartures({
+        ts: new Date().getTime() / 1000,
+        stopId, offset: 0, limit: 15, excludeCancelled: true,
+        modes: 'au2:sydneytrains,au2:nswtrains,au2:metro', // excl. bus,coach
+        depArr: 'deparr'
+      });
+    } catch(e) {
+      console.log(e);
+      return false;
+    }
+
+    if (!depReq) return false;
 
     const now = new Date().getTime() / 1000;
     const departures = depReq.response.departures
-      // remove terminating and continued services
-      .filter(dep => !dep.stopTimeInstance.lastStop || !dep.tripInstance.trip.tripContinues)
+    // remove terminating and continued services
+    /* .filter(dep => !dep.stopTimeInstance.lastStop || !dep.tripInstance.trip.tripContinues)
       .filter(dep => {
         if (!dep.stopTimeInstance.scheduledStop) return true;
 
@@ -95,6 +104,7 @@ class DataGetter {
 
         return true;
       })
+      */
       .filter(dep => {
         // remove inactive/unscheduled/cancelled services(?)
         if (!dep.tripInstance.current) return true;
@@ -129,6 +139,7 @@ class DataGetter {
           isExpress: res.isExpress,
           isLimitedStops: res.isLimitedStops,
           isIntercity: res.isIntercity,
+          terminates: res.terminates,
 
           stops: res.stations.map(station => nameTransform(station.fullName)),
 
@@ -212,7 +223,8 @@ class DataGetter {
           || service.tripInstance.trip.route.agency.id === 'au2:nt:X000',
         isBookingRequired: service.tripInstance.trip.route.agency.id === 'au2:nt:710'
           || service.tripInstance.trip.route.agency.id === 'au2:nt:711',
-        doesNotStop: currentStopTimeInstance.pickUp === 1
+        doesNotStop: currentStopTimeInstance.pickUp === 1,
+        terminates: currentStopTimeInstance.lastStop || currentStopTimeInstance.lastRevenueStop
       };
     }
 

@@ -99,6 +99,31 @@
       }
     }
   }
+
+  &.doesnotstop {
+    background: #fff9bb;
+    padding: 2em;
+
+    h1 {
+      font-size: 13.2vw;
+      font-weight: 500;
+      margin: 0.3em 0 0;
+
+      @media #{$horizontal} {
+        font-size: 8vw;
+      }
+    }
+
+    h3 {
+      font-size: 7.8vw;
+      font-weight: 400;
+
+      @media #{$horizontal} {
+        margin-top: 0.3em;
+        font-size: 5.8vw;
+      }
+    }
+  }
 }
 
 /* @license
