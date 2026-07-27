@@ -1,36 +1,50 @@
-import React, { Component, useContext } from 'react';
-import { ServiceIcon } from './ServiceIcon';
-import { NetworkTime, DepartureTime, truncateStationName, lineColour } from '../util';
-import { Badges } from './Badge';
-import State from '../state';
+import React, { Component, useContext } from 'react'
 
-import plane from '../assets/icons/airport.svg';
-import '../assets/styles/TimeBar.scss';
-import '../assets/styles/ServiceBar.scss';
-import { Service } from '../types';
+import plane from '../assets/icons/airport.svg'
+import State from '../state'
+import { Service } from '../types'
+import {
+  NetworkTime,
+  DepartureTime,
+  truncateStationName,
+  lineColour,
+} from '../util'
+import { Badges } from './Badge'
+
+import '../assets/styles/TimeBar.scss'
+import '../assets/styles/ServiceBar.scss'
+import { ServiceIcon } from './ServiceIcon'
 
 const icons: Record<string, string> = {
-  'plane': plane
-};
-
-interface ServiceBarProps {
-  service: Service;
-  icon?: string;
-  time?: boolean;
+  plane: plane,
 }
 
-export const ServiceBar: React.FC<ServiceBarProps> = ({ service, icon, time = true }) => {
-  const { serviceTitle, theme } = useContext(State);
-  if (!service) return null;
+interface ServiceBarProps {
+  service: Service
+  icon?: string
+  time?: boolean
+}
 
-  const { destination, mode, line, serviceTime, isBookingRequired, platform } = service;
-  const verticalStyle = (mode && ['intercity', 'trainlink', 'coach'].includes(mode)) ? 'isIntercity' : '';
-  const indicatorIsHidden = Boolean(service?.doesNotStop);
-  let altIcon: string | null = null;
-  const barIsHidden = !time || indicatorIsHidden;
+export const ServiceBar: React.FC<ServiceBarProps> = ({
+  service,
+  icon,
+  time = true,
+}) => {
+  const { serviceTitle, theme } = useContext(State)
+  if (!service) return null
+
+  const { destination, mode, line, serviceTime, isBookingRequired, platform } =
+    service
+  const verticalStyle =
+    mode && ['intercity', 'trainlink', 'coach'].includes(mode)
+      ? 'isIntercity'
+      : ''
+  const indicatorIsHidden = Boolean(service?.doesNotStop)
+  let altIcon: string | null = null
+  const barIsHidden = !time || indicatorIsHidden
 
   if (destination?.via === 'via Airport stations') {
-    altIcon = 'plane';
+    altIcon = 'plane'
   }
 
   return (
@@ -46,13 +60,17 @@ export const ServiceBar: React.FC<ServiceBarProps> = ({ service, icon, time = tr
             </div>
             <div className="line_stack">
               <div className="service_time">{DepartureTime(serviceTime)}</div>
-              <div className="line_to">{destination?.to ? truncateStationName(destination.to) : ''}</div>
+              <div className="line_to">
+                {destination?.to ? truncateStationName(destination.to) : ''}
+              </div>
               {isBookingRequired ? (
                 <Badges hasBooking={true} />
               ) : (
                 <div className="line_via">
                   {destination?.via}
-                  {altIcon && <img className="icon" src={icons[altIcon]} alt="" />}
+                  {altIcon && (
+                    <img className="icon" src={icons[altIcon]} alt="" />
+                  )}
                 </div>
               )}
             </div>
@@ -68,54 +86,61 @@ export const ServiceBar: React.FC<ServiceBarProps> = ({ service, icon, time = tr
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
 interface TimeBarProps {
-  title?: string | null;
-  type?: string | null;
+  title?: string | null
+  type?: string | null
 }
 
 interface TimeBarState {
-  time: string;
+  time: string
 }
 
 export class TimeBar extends Component<TimeBarProps, TimeBarState> {
-  timerID?: ReturnType<typeof setInterval>;
+  timerID?: ReturnType<typeof setInterval>
 
   constructor(props: TimeBarProps) {
-    super(props);
-    this.state = { time: NetworkTime() };
+    super(props)
+    this.state = { time: NetworkTime() }
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 500);
+    this.timerID = setInterval(() => this.tick(), 500)
   }
 
   componentWillUnmount() {
     if (this.timerID) {
-      clearInterval(this.timerID);
+      clearInterval(this.timerID)
     }
   }
 
   tick() {
-    this.setState({ time: NetworkTime() });
+    this.setState({ time: NetworkTime() })
   }
 
   render() {
-    const rawType = this.props.type;
-    const type = rawType === 'intercity' || rawType === 'trainlink' || rawType === 'none' || !rawType
-      ? 'train'
-      : rawType;
+    const rawType = this.props.type
+    const type =
+      rawType === 'intercity' ||
+      rawType === 'trainlink' ||
+      rawType === 'none' ||
+      !rawType
+        ? 'train'
+        : rawType
 
     return (
-      <div className="time_bar" style={{ backgroundColor: lineColour(null, type) }}>
+      <div
+        className="time_bar"
+        style={{ backgroundColor: lineColour(null, type) }}
+      >
         <div className="title">{this.props.title}</div>
         <div className="time_container">
           <div className="time_text">Time now</div>
           <div className="time_now">{this.state.time}</div>
         </div>
       </div>
-    );
+    )
   }
 }

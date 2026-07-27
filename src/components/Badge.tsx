@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
-import State from '../state';
-import '../assets/styles/Badge.scss';
+import React, { useContext } from 'react'
+
+import State from '../state'
+
+import '../assets/styles/Badge.scss'
 
 // <Badges hasBooking={true} items={['8 cars', 'All Stops']} />
 export const Badges: React.FC<BadgesProps> = ({ items, hasBooking }) => {
-  const { theme } = useContext(State);
-  const filteredItems = items?.filter(Boolean) as string[];
+  const { theme } = useContext(State)
+  const filteredItems = items?.filter(Boolean) as string[]
 
   return (
     <div className={`badge_stack ${theme || ''}`}>
@@ -16,25 +18,27 @@ export const Badges: React.FC<BadgesProps> = ({ items, hasBooking }) => {
       )}
       {filteredItems && filteredItems.length > 0 && (
         <div className="badge_group">
-          {filteredItems.map(i => <BadgeItem text={i} key={i} />)}
+          {filteredItems.map((i) => (
+            <BadgeItem text={i} key={i} />
+          ))}
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 interface BadgesProps {
-  items?: (string | null | undefined)[];
-  hasBooking?: boolean;
+  items?: (string | null | undefined)[]
+  hasBooking?: boolean
 }
 
 interface BadgeItemProps {
-  text?: string | null;
-  isBooking?: boolean;
+  text?: string | null
+  isBooking?: boolean
 }
 
 const BadgeItem: React.FC<BadgeItemProps> = ({ text, isBooking }) => {
-  if (!text || text === '') return null;
-  const classes = `badge ${isBooking ? 'badge-booking' : ''}`;
-  return <div className={classes}>{text}</div>;
-};
+  if (!text || text === '') return null
+  const classes = `badge ${isBooking ? 'badge-booking' : ''}`
+  return <div className={classes}>{text}</div>
+}

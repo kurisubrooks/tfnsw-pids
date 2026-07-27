@@ -1,5 +1,12 @@
-import React, { useEffect, useState, useRef, ReactNode, CSSProperties } from 'react';
-import '../assets/styles/StationScroll.scss';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  ReactNode,
+  CSSProperties,
+} from 'react'
+
+import '../assets/styles/StationScroll.scss'
 
 /*
   Forked from Justin Chu under the MIT License
@@ -8,14 +15,14 @@ import '../assets/styles/StationScroll.scss';
 */
 
 interface MarqueeProps {
-  style?: CSSProperties;
-  className?: string;
-  play?: boolean;
-  direction?: 'up' | 'down';
-  speed?: number;
-  delay?: number;
-  loop?: number;
-  children?: ReactNode;
+  style?: CSSProperties
+  className?: string
+  play?: boolean
+  direction?: 'up' | 'down'
+  speed?: number
+  delay?: number
+  loop?: number
+  children?: ReactNode
 }
 
 const Marquee: React.FC<MarqueeProps> = ({
@@ -26,52 +33,52 @@ const Marquee: React.FC<MarqueeProps> = ({
   speed = 30,
   delay = 0,
   loop = 0,
-  children
+  children,
 }) => {
   // React Hooks
-  const [containerHeight, setContainerHeight] = useState(0);
-  const [marqueeHeight, setMarqueeHeight] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [containerHeight, setContainerHeight] = useState(0)
+  const [marqueeHeight, setMarqueeHeight] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const [isMounted, setIsMounted] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const marqueeRef = useRef<HTMLDivElement>(null)
 
   const calculateHeight = () => {
     // Find height of container and height of marquee
     if (marqueeRef.current && containerRef.current) {
-      setContainerHeight(containerRef.current.getBoundingClientRect().height);
-      setMarqueeHeight(marqueeRef.current.getBoundingClientRect().height);
+      setContainerHeight(containerRef.current.getBoundingClientRect().height)
+      setMarqueeHeight(marqueeRef.current.getBoundingClientRect().height)
     }
 
     if (marqueeHeight < containerHeight) {
-      setDuration(containerHeight / speed);
+      setDuration(containerHeight / speed)
     } else {
-      setDuration(marqueeHeight / speed);
+      setDuration(marqueeHeight / speed)
     }
-  };
+  }
 
   useEffect(() => {
-    calculateHeight();
+    calculateHeight()
     // Rerender on window resize
-    window.addEventListener('resize', calculateHeight);
+    window.addEventListener('resize', calculateHeight)
     return () => {
-      window.removeEventListener('resize', calculateHeight);
-    };
-  });
+      window.removeEventListener('resize', calculateHeight)
+    }
+  })
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
   const styles = {
     '--play': play ? 'running' : 'paused',
     '--direction': direction === 'up' ? 'normal' : 'reverse',
     '--duration': `${duration}s`,
     '--delay': `${delay}s`,
-    '--iteration-count': loop ? `${loop}` : 'infinite'
-  } as CSSProperties;
+    '--iteration-count': loop ? `${loop}` : 'infinite',
+  } as CSSProperties
 
-  if (!isMounted) return null;
+  if (!isMounted) return null
 
   return (
     <div
@@ -86,7 +93,7 @@ const Marquee: React.FC<MarqueeProps> = ({
         {children}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Marquee;
+export default Marquee

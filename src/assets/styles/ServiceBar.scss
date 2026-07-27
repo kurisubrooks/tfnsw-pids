@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import './_variables.scss';
 
 .service_bar {
   display: flex;
@@ -30,19 +30,25 @@
 
     .service_container {
       flex-direction: column;
-      @media #{$horizontal} { flex-direction: row; }
+      @media #{$horizontal} {
+        flex-direction: row;
+      }
 
       .service {
         display: flex;
         align-items: center;
-        @media #{$vertical} { margin-bottom: 0.25em; }
+        @media #{$vertical} {
+          margin-bottom: 0.25em;
+        }
       }
 
       .service_time {
         display: block;
         font-size: 2.5em;
         line-height: 1em;
-        @media #{$horizontal} { display: none; }
+        @media #{$horizontal} {
+          display: none;
+        }
       }
 
       .line_stack {
@@ -68,7 +74,9 @@
         }
 
         .badge_group {
-          @media #{$horizontal} { display: none; }
+          @media #{$horizontal} {
+            display: none;
+          }
         }
       }
     }
@@ -91,7 +99,9 @@
       justify-content: center;
       font-weight: 500;
 
-      .service_time { display: none; }
+      .service_time {
+        display: none;
+      }
 
       .line_to {
         font-size: 2.85em;
@@ -100,9 +110,15 @@
         letter-spacing: -0.03em;
         -webkit-text-stroke: 0.5px;
 
-        @media #{$mobile} { -webkit-text-stroke: 0px; }
-        @media #{$tablet} { -webkit-text-stroke: 0px; }
-        @media #{$horizontal} { font-size: 2.5em; }
+        @media #{$mobile} {
+          -webkit-text-stroke: 0px;
+        }
+        @media #{$tablet} {
+          -webkit-text-stroke: 0px;
+        }
+        @media #{$horizontal} {
+          font-size: 2.5em;
+        }
       }
 
       .line_via {
@@ -119,7 +135,9 @@
           padding: 0.15em 0 0 0.25em;
         }
 
-        @media #{$horizontal} { font-size: 1.7em; }
+        @media #{$horizontal} {
+          font-size: 1.7em;
+        }
       }
 
       .badge_group {
@@ -140,7 +158,9 @@
     position: relative;
     top: -0.25em;
 
-    @media #{$horizontal} { display: block; }
+    @media #{$horizontal} {
+      display: block;
+    }
 
     .title {
       font-size: 0.9em;

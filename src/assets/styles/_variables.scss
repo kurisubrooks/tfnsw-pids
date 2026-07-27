@@ -1,18 +1,18 @@
 $vertical: 'screen and (orientation: portrait)';
 $horizontal: 'screen and (orientation: landscape)';
 
-$mobile: "(max-width: 480px)";
-$tablet: "(min-width: 481px) and (max-width: 768px)";
-$laptop: "(min-width: 769px) and (max-width: 1024px)";
-$desktop: "(min-width: 1025px) and (max-width: 1200px)";
-$tv: "(min-width: 1201px)";
+$mobile: '(max-width: 480px)';
+$tablet: '(min-width: 481px) and (max-width: 768px)';
+$laptop: '(min-width: 769px) and (max-width: 1024px)';
+$desktop: '(min-width: 1025px) and (max-width: 1200px)';
+$tv: '(min-width: 1201px)';
 
 $fontSize: 16px;
 $screenPadding: 1em;
 $horizontalScreenPadding: 1.5em;
 $fontColour: #000000;
-$darkFontColour: #FFFFFF;
-$background: #F8F8F8;
+$darkFontColour: #ffffff;
+$background: #f8f8f8;
 $darkBackground: #121212;
 
 // Service Colours

@@ -1,51 +1,60 @@
-import React from 'react';
-import Marquee from './Marquee';
+import React from 'react'
 
-import plane from '../assets/icons/airport.svg';
-import '../assets/styles/StationScroll.scss';
+import plane from '../assets/icons/airport.svg'
+import Marquee from './Marquee'
+
+import '../assets/styles/StationScroll.scss'
 
 const icons: Record<string, string> = {
-  'plane': plane
-};
-
-interface StationScrollProps {
-  stops?: string[];
-  limit: number;
-  speed?: number;
+  plane: plane,
 }
 
-export const StationScroll: React.FC<StationScrollProps> = ({ stops, limit, speed = 75 }) => {
-  if (!stops) return null;
-  const buffer = ['', ''];
-  const stopsJoined = stops.concat(buffer);
+interface StationScrollProps {
+  stops?: string[]
+  limit: number
+  speed?: number
+}
 
-  const scroll = stops.length > limit;
-  const scrollSpeed = speed * (window.innerHeight / 650);
+export const StationScroll: React.FC<StationScrollProps> = ({
+  stops,
+  limit,
+  speed = 75,
+}) => {
+  if (!stops) return null
+  const buffer = ['', '']
+  const stopsJoined = stops.concat(buffer)
+
+  const scroll = stops.length > limit
+  const scrollSpeed = speed * (window.innerHeight / 650)
 
   return (
     <div className="station_scroll">
       {scroll ? (
         <Marquee speed={scrollSpeed}>
-          {stopsJoined.map((station, index) => <Station key={index} name={station} />)}
+          {stopsJoined.map((station, index) => (
+            <Station key={index} name={station} />
+          ))}
         </Marquee>
       ) : (
-        stopsJoined.map((station, index) => <Station key={index} name={station} />)
+        stopsJoined.map((station, index) => (
+          <Station key={index} name={station} />
+        ))
       )}
     </div>
-  );
-};
+  )
+}
 
 interface StationProps {
-  name: string;
+  name: string
 }
 
 const Station: React.FC<StationProps> = ({ name }) => {
-  let displayName = name;
-  let altIcon: string | null = null;
+  let displayName = name
+  let altIcon: string | null = null
 
   if (displayName.includes(' Airport')) {
-    displayName = displayName.replace(' Airport', '');
-    altIcon = 'plane';
+    displayName = displayName.replace(' Airport', '')
+    altIcon = 'plane'
   }
 
   return (
@@ -53,5 +62,5 @@ const Station: React.FC<StationProps> = ({ name }) => {
       {displayName}
       {altIcon && <img className="icon" src={icons[altIcon]} alt="" />}
     </div>
-  );
-};
+  )
+}

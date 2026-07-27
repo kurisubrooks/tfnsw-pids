@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import '_variables.scss';
 
 .following_services {
   margin: 0.5em $screenPadding 1em;
@@ -38,10 +38,18 @@
         height: 1.2em;
         margin-top: 0.1em;
 
-        .cell { width: 100%; }
-        .via-text { margin-right: 0.5em; }
-        .badge_stack { font-size: 0.75em; }
-        &:not(:last-child) { margin-bottom: 0.2em;}
+        .cell {
+          width: 100%;
+        }
+        .via-text {
+          margin-right: 0.5em;
+        }
+        .badge_stack {
+          font-size: 0.75em;
+        }
+        &:not(:last-child) {
+          margin-bottom: 0.2em;
+        }
       }
 
       .cell {

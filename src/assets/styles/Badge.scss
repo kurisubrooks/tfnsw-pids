@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import '_variables.scss';
 
 .badge_stack {
   display: flex;
@@ -29,7 +29,9 @@
     @media #{$vertical} {
       flex-direction: row;
       width: auto;
-      &.has-booking { display: none; }
+      &.has-booking {
+        display: none;
+      }
     }
 
     .badge {

@@ -1,18 +1,23 @@
-import React, { useContext } from 'react';
-import { ErrorComponentProps } from '@tanstack/react-router';
-import ErrorFormatter from '../error';
-import State from '../state';
-import { TimeBar } from '../components/ServiceBar';
-import { ServiceIcon } from '../components/ServiceIcon';
-import '../assets/styles/ServiceBar.scss';
-import '../assets/styles/StationScroll.scss';
-import '../assets/styles/ErrorView.scss';
+import { ErrorComponentProps } from '@tanstack/react-router'
+import React, { useContext } from 'react'
 
-export const ErrorView: React.FC<Partial<ErrorComponentProps>> = ({ error, reset }) => {
-  const stateContext = useContext(State);
-  const theme = stateContext?.theme;
-  const serviceTitle = stateContext?.serviceTitle;
-  const formatted = ErrorFormatter.format(error || 'Service data unavailable.');
+import { TimeBar } from '../components/ServiceBar'
+import { ServiceIcon } from '../components/ServiceIcon'
+import ErrorFormatter from '../error'
+import State from '../state'
+
+import '../assets/styles/ServiceBar.scss'
+import '../assets/styles/StationScroll.scss'
+import '../assets/styles/ErrorView.scss'
+
+export const ErrorView: React.FC<Partial<ErrorComponentProps>> = ({
+  error,
+  reset,
+}) => {
+  const stateContext = useContext(State)
+  const theme = stateContext?.theme
+  const serviceTitle = stateContext?.serviceTitle
+  const formatted = ErrorFormatter.format(error || 'Service data unavailable.')
 
   return (
     <>
@@ -44,5 +49,5 @@ export const ErrorView: React.FC<Partial<ErrorComponentProps>> = ({ error, reset
         )}
       </div>
     </>
-  );
-};
+  )
+}

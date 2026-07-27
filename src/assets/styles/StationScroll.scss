@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import '_variables.scss';
 
 .scroll_view {
   overflow: hidden;
@@ -58,7 +58,9 @@
 
     .platform {
       display: block;
-      @media #{$horizontal} { display: none; }
+      @media #{$horizontal} {
+        display: none;
+      }
     }
   }
 
@@ -69,7 +71,9 @@
     z-index: 1;
     background: $background;
     padding: 0.5em 0;
-    @media #{$horizontal} { display: none; }
+    @media #{$horizontal} {
+      display: none;
+    }
   }
 
   .station_scroll {
@@ -84,8 +88,12 @@
       -webkit-text-stroke: 1px;
       white-space: nowrap;
 
-      @media #{$mobile} { -webkit-text-stroke: 0.25px; }
-      @media #{$tablet} { -webkit-text-stroke: 0.5px; }
+      @media #{$mobile} {
+        -webkit-text-stroke: 0.25px;
+      }
+      @media #{$tablet} {
+        -webkit-text-stroke: 0.5px;
+      }
 
       .icon {
         width: 0.7em;
