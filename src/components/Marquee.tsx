@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, ReactNode, CSSProperties } from 'react';
 import '../assets/styles/StationScroll.scss';
 
 /*
@@ -7,14 +7,34 @@ import '../assets/styles/StationScroll.scss';
   https://www.react-fast-marquee.com/documentation
 */
 
-const Marquee = ({ style = {}, className = '', play = true, direction = 'up', speed = 30, delay = 0, loop = 0, children }) => {
+interface MarqueeProps {
+  style?: CSSProperties;
+  className?: string;
+  play?: boolean;
+  direction?: 'up' | 'down';
+  speed?: number;
+  delay?: number;
+  loop?: number;
+  children?: ReactNode;
+}
+
+const Marquee: React.FC<MarqueeProps> = ({
+  style = {},
+  className = '',
+  play = true,
+  direction = 'up',
+  speed = 30,
+  delay = 0,
+  loop = 0,
+  children
+}) => {
   // React Hooks
   const [containerHeight, setContainerHeight] = useState(0);
   const [marqueeHeight, setMarqueeHeight] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const containerRef = useRef(null);
-  const marqueeRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
 
   const calculateHeight = () => {
     // Find height of container and height of marquee
@@ -48,10 +68,12 @@ const Marquee = ({ style = {}, className = '', play = true, direction = 'up', sp
     '--direction': direction === 'up' ? 'normal' : 'reverse',
     '--duration': `${duration}s`,
     '--delay': `${delay}s`,
-    '--iteration-count': !!loop ? `${loop}` : 'infinite'
-  };
+    '--iteration-count': loop ? `${loop}` : 'infinite'
+  } as CSSProperties;
 
-  return isMounted && <>
+  if (!isMounted) return null;
+
+  return (
     <div
       ref={containerRef}
       style={{ ...style }}
@@ -64,7 +86,7 @@ const Marquee = ({ style = {}, className = '', play = true, direction = 'up', sp
         {children}
       </div>
     </div>
-  </>;
+  );
 };
 
 export default Marquee;
