@@ -1,3 +1,4 @@
+import React from 'react';
 import '../assets/styles/ServiceIcon.scss';
 
 import M from '../assets/icons/M.svg';
@@ -22,13 +23,13 @@ import information from '../assets/icons/information.svg';
 import donotboard from '../assets/icons/donotboard.svg';
 import blank from '../assets/icons/blank.svg';
 
-const icons = {
+const icons: Record<string, string> = {
   M, T, TL, B, F, L, C,
   T1, T2, T3, T4, T5, T6, T7, T8, T9,
   information, donotboard, blank
 };
 
-const typeToText = {
+const typeToText: Record<string, string> = {
   'train': 'T',
   'intercity': 'T',
   'trainlink': 'TL',
@@ -39,27 +40,41 @@ const typeToText = {
   'ferry': 'F'
 };
 
-export const ServiceIcon = ({ line, type, icon }) => {
+interface ServiceIconProps {
+  line?: string | null;
+  type?: string | null;
+  icon?: string | null;
+}
+
+export const ServiceIcon: React.FC<ServiceIconProps> = ({ line, type, icon }) => {
   // Pre-determined Icons
   if (icon) {
     if (icon === 'information') {
-      return <NewIcon icon="information" />;
+      return <NewIcon icon="information" isLarge={true} />;
     } else if (icon === 'outofservice') {
       return <NewIcon icon="donotboard" />;
     }
   }
 
-  if (!line) type = 'blank';
-  const isRound = ['intercity', 'trainlink', 'coach', 'metro'].indexOf(type) > -1;
-  const isSmall = isRound && type !== 'metro';
-  const text = isRound ? typeToText[type] : line;
+  let effectiveType = type || 'blank';
+  if (!line) effectiveType = 'blank';
+  const isRound = ['intercity', 'trainlink', 'coach', 'metro'].includes(effectiveType);
+  const isSmall = isRound && effectiveType !== 'metro';
+  const text = isRound ? typeToText[effectiveType] : line;
 
-  return <NewIcon icon={text} isSmall={isSmall} />;
+  return <NewIcon icon={text || 'blank'} isSmall={isSmall} />;
 };
 
-const NewIcon = ({ icon, isSmall }) => {
-  if (!icon) icon = 'blank';
+interface NewIconProps {
+  icon: string;
+  isSmall?: boolean;
+  isLarge?: boolean;
+}
+
+const NewIcon: React.FC<NewIconProps> = ({ icon, isSmall, isLarge }) => {
+  const iconKey = icon || 'blank';
   const classes = ['service_icon'];
   if (isSmall) classes.push('small');
-  return <img className={classes.join(' ')} src={icons[icon]} alt="" />;
+  if (isLarge) classes.push('large');
+  return <img className={classes.join(' ')} src={icons[iconKey] || icons.blank} alt="" />;
 };
