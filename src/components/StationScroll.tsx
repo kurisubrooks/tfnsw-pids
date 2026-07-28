@@ -21,8 +21,12 @@ export const StationScroll: React.FC<StationScrollProps> = ({
   speed = 75,
 }) => {
   if (!stops) return null
-  const buffer = ['', '']
-  const stopsJoined = stops.concat(buffer)
+
+  const items = [
+    ...stops.map((name) => ({ key: name, name })),
+    { key: 'spacer-0', name: '' },
+    { key: 'spacer-1', name: '' },
+  ]
 
   const scroll = stops.length > limit
   const scrollSpeed = speed * (window.innerHeight / 650)
@@ -31,13 +35,13 @@ export const StationScroll: React.FC<StationScrollProps> = ({
     <div className="station_scroll">
       {scroll ? (
         <Marquee speed={scrollSpeed}>
-          {stopsJoined.map((station) => (
-            <Station key={station} name={station} />
+          {items.map((item) => (
+            <Station key={item.key} name={item.name} />
           ))}
         </Marquee>
       ) : (
-        stopsJoined.map((station) => (
-          <Station key={station} name={station} />
+        items.map((item) => (
+          <Station key={item.key} name={item.name} />
         ))
       )}
     </div>
