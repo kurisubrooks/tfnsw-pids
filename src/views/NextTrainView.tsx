@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { NextServicesBar } from '../components/NextServicesBar'
 import { ServiceBar } from '../components/ServiceBar'
 import State from '../state'
-import { Service } from '../types'
+import type { Service } from '../types'
 import { ServiceView } from './ServiceView'
 
 interface NextTrainViewProps {

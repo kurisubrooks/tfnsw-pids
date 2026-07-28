@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ServiceBar } from '../components/ServiceBar'
 import { ServiceIcon } from '../components/ServiceIcon'
-import { Service } from '../types'
+import type { Service } from '../types'
 
 const schema: Service[] = [
   {
@@ -39,10 +39,13 @@ const schema: Service[] = [
   },
 ]
 
+const debugContainerStyle = { padding: '1em' }
+const iconGridStyle = { display: 'flex', flexWrap: 'wrap' } as const
+
 export const DebugView: React.FC = () => {
   return (
-    <div style={{ padding: '1em' }}>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div style={debugContainerStyle}>
+      <div style={iconGridStyle}>
         <ServiceIcon line="T1" type="train" />
         <ServiceIcon line="T2" type="train" />
         <ServiceIcon line="T3" type="train" />

@@ -6,7 +6,7 @@ import { StationScroll } from '../components/StationScroll'
 import State from '../state'
 
 import '../assets/styles/StationScroll.scss'
-import { Service } from '../types'
+import type { Service } from '../types'
 import { ErrorView } from './ErrorView'
 
 interface ServiceViewProps {
@@ -41,11 +41,7 @@ export const ServiceView: React.FC<ServiceViewProps> = ({
 
   if (doesNotStop)
     return (
-      <DoesNotStopView
-        services={services}
-        stops={stops}
-        departure={departure}
-      />
+      <DoesNotStopView />
     )
 
   const badgeItems = [
@@ -84,11 +80,7 @@ export const ServiceView: React.FC<ServiceViewProps> = ({
   )
 }
 
-const DoesNotStopView: React.FC<ServiceViewProps> = ({
-  services,
-  stops,
-  departure,
-}) => {
+const DoesNotStopView: React.FC = () => {
   const { theme } = useContext(State)
 
   return (

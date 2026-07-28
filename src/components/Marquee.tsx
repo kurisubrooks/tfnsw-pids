@@ -1,9 +1,10 @@
+import type { ReactNode, CSSProperties } from 'react'
 import React, {
   useEffect,
+  useMemo,
   useState,
   useRef,
-  ReactNode,
-  CSSProperties,
+  useSyncExternalStore,
 } from 'react'
 
 import '../assets/styles/StationScroll.scss'
@@ -25,8 +26,13 @@ interface MarqueeProps {
   children?: ReactNode
 }
 
+const defaultStyle: CSSProperties = {}
+const noop = () => () => {}
+const getTrue = () => true
+const getFalse = () => false
+
 const Marquee: React.FC<MarqueeProps> = ({
-  style = {},
+  style = defaultStyle,
   className = '',
   play = true,
   direction = 'up',
@@ -39,7 +45,7 @@ const Marquee: React.FC<MarqueeProps> = ({
   const [containerHeight, setContainerHeight] = useState(0)
   const [marqueeHeight, setMarqueeHeight] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [isMounted, setIsMounted] = useState(false)
+  const isMounted = useSyncExternalStore(noop, getTrue, getFalse)
   const containerRef = useRef<HTMLDivElement>(null)
   const marqueeRef = useRef<HTMLDivElement>(null)
 
@@ -66,26 +72,22 @@ const Marquee: React.FC<MarqueeProps> = ({
     }
   })
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  const styles = {
-    '--play': play ? 'running' : 'paused',
-    '--direction': direction === 'up' ? 'normal' : 'reverse',
-    '--duration': `${duration}s`,
-    '--delay': `${delay}s`,
-    '--iteration-count': loop ? `${loop}` : 'infinite',
-  } as CSSProperties
+  const styles = useMemo(
+    () =>
+      ({
+        '--play': play ? 'running' : 'paused',
+        '--direction': direction === 'up' ? 'normal' : 'reverse',
+        '--duration': `${duration}s`,
+        '--delay': `${delay}s`,
+        '--iteration-count': loop ? `${loop}` : 'infinite',
+      }) as CSSProperties,
+    [play, direction, duration, delay, loop],
+  )
 
   if (!isMounted) return null
 
   return (
-    <div
-      ref={containerRef}
-      style={{ ...style }}
-      className={className + ' marquee'}
-    >
+    <div ref={containerRef} style={style} className={className + ' marquee'}>
       <div ref={marqueeRef} className="marquee_container" style={styles}>
         {children}
       </div>

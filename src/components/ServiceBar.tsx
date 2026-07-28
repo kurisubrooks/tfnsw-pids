@@ -2,7 +2,7 @@ import React, { Component, useContext } from 'react'
 
 import plane from '../assets/icons/airport.svg'
 import State from '../state'
-import { Service } from '../types'
+import type { Service } from '../types'
 import {
   NetworkTime,
   DepartureTime,
@@ -100,6 +100,8 @@ interface TimeBarState {
 
 export class TimeBar extends Component<TimeBarProps, TimeBarState> {
   timerID?: ReturnType<typeof setInterval>
+  private cachedType: string = ''
+  private cachedStyle: { backgroundColor: string } = { backgroundColor: '' }
 
   constructor(props: TimeBarProps) {
     super(props)
@@ -120,6 +122,14 @@ export class TimeBar extends Component<TimeBarProps, TimeBarState> {
     this.setState({ time: NetworkTime() })
   }
 
+  private getStyle(type: string) {
+    if (type !== this.cachedType) {
+      this.cachedType = type
+      this.cachedStyle = { backgroundColor: lineColour(null, type) }
+    }
+    return this.cachedStyle
+  }
+
   render() {
     const rawType = this.props.type
     const type =
@@ -131,10 +141,7 @@ export class TimeBar extends Component<TimeBarProps, TimeBarState> {
         : rawType
 
     return (
-      <div
-        className="time_bar"
-        style={{ backgroundColor: lineColour(null, type) }}
-      >
+      <div className="time_bar" style={this.getStyle(type)}>
         <div className="title">{this.props.title}</div>
         <div className="time_container">
           <div className="time_text">Time now</div>

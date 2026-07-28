@@ -194,6 +194,10 @@ export default {
     'import/no-duplicates': 'error',
     'import/no-named-as-default': 'warn',
     'import/no-named-as-default-member': 'warn',
+    'import/no-unassigned-import': [
+      'warn',
+      { allow: ['**/*.scss', '**/*.css'] },
+    ],
 
     'react-perf/jsx-no-new-object-as-prop': 'warn',
     'react-perf/jsx-no-new-array-as-prop': 'warn',

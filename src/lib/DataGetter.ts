@@ -1,5 +1,5 @@
 // oxlint-disable no-underscore-dangle
-import ErrorFormatter, { type FormattedError } from '../error'
+import { formatError, type FormattedError } from '../error'
 import type { Service } from '../types'
 import type {
   ApiEnvelope,
@@ -32,17 +32,12 @@ export class DataGetter {
   baseUrl: string
 
   constructor() {
-    this.baseUrl =
-      typeof window !== 'undefined'
-        ? '/anytrip/api/v3/region/au2'
-        : 'https://anytrip.com.au/api/v3/region/au2'
+    this.baseUrl = 'https://anytrip.com.au/api/v3/region/au2'
   }
 
   static getBaseUrlFromId(idWithPrefix: string): string {
     const [prefix] = idWithPrefix.split(':')
-    return typeof window !== 'undefined'
-      ? `/anytrip/api/v3/region/${prefix}`
-      : `https://anytrip.com.au/api/v3/region/${prefix}`
+    return `https://anytrip.com.au/api/v3/region/${prefix}`
   }
 
   async makeRequest<T = unknown>(
@@ -88,7 +83,7 @@ export class DataGetter {
       if ((error as Error & { statusCode?: number })?.statusCode === 404) {
         throw error
       }
-      return ErrorFormatter.format(error) as T
+      return formatError(error) as T
     }
   }
 
@@ -190,7 +185,7 @@ export class DataGetter {
 
     if (!depReq || !('response' in depReq)) return false
 
-    const stopIds = stopId.split(',')
+    const _stopIds = stopId.split(',')
     const now = new Date().getTime() / 1000
     const departures = depReq.response?.departures
 

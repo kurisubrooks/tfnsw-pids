@@ -9,14 +9,14 @@ interface CacheEntry {
   timestamp: number
 }
 
-// In-memory server/client cache with 10-second TTL
+// In-memory server cache with 10-second TTL
 const cache = new Map<string, CacheEntry>()
 const TTL_MS = 10 * 1000
 
-export async function getPidData(opts: {
-  data: { stopId: string; servicesLimit?: number }
-}): Promise<Service[] | null> {
-  const { stopId, servicesLimit = 2 } = opts.data
+export async function getPidData(
+  stopId: string,
+  servicesLimit = 2,
+): Promise<Service[] | null> {
   const cacheKey = `${stopId}-${servicesLimit}`
   const now = Date.now()
 

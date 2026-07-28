@@ -12,13 +12,4 @@ export default defineConfig({
     }),
     react(),
   ],
-  server: {
-    proxy: {
-      '/anytrip': {
-        target: 'https://anytrip.com.au',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/anytrip/, ''),
-      },
-    },
-  },
 })

@@ -1,6 +1,7 @@
-import React, { Component, ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import React, { Component } from 'react'
 
-import { StateContextType } from './types'
+import type { StateContextType } from './types'
 
 const Context = React.createContext<StateContextType>({})
 export const Provider = Context.Provider
@@ -35,17 +36,17 @@ export class StateManager extends Component<
     if (this.state.theme) {
       document.body.classList.add(this.state.theme)
     }
-    window.addEventListener('resize', this.updateState.bind(this))
+    window.addEventListener('resize', this.updateState)
   }
 
   componentWillUnmount() {
     if (this.state.theme) {
       document.body.classList.remove(this.state.theme)
     }
-    window.removeEventListener('resize', this.updateState.bind(this))
+    window.removeEventListener('resize', this.updateState)
   }
 
-  updateState() {
+  updateState = () => {
     const isLandscape = window.innerHeight < window.innerWidth
     const serviceTitle = isLandscape ? 'Next service' : 'Service'
     this.setState({ isLandscape, serviceTitle })

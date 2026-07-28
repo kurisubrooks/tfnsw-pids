@@ -1,9 +1,9 @@
-import { ErrorComponentProps } from '@tanstack/react-router'
+import type { ErrorComponentProps } from '@tanstack/react-router'
 import React, { useContext } from 'react'
 
 import { TimeBar } from '../components/ServiceBar'
 import { ServiceIcon } from '../components/ServiceIcon'
-import ErrorFormatter from '../error'
+import { formatError } from '../error'
 import State from '../state'
 
 import '../assets/styles/ServiceBar.scss'
@@ -17,7 +17,7 @@ export const ErrorView: React.FC<Partial<ErrorComponentProps>> = ({
   const stateContext = useContext(State)
   const theme = stateContext?.theme
   const serviceTitle = stateContext?.serviceTitle
-  const formatted = ErrorFormatter.format(error || 'Service data unavailable.')
+  const formatted = formatError(error || 'Service data unavailable.')
 
   return (
     <>

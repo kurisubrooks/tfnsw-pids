@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 
 import State from '../state'
-import { Service } from '../types'
+import type { Service } from '../types'
 import { DepartureTimeCountdown, truncateStationName } from '../util'
 
 import '../assets/styles/NextServicesBar.scss'
@@ -46,6 +46,7 @@ const NextServiceItem: React.FC<NextServiceItemProps> = ({ service }) => {
           ? 'Limited Stops'
           : 'All Stops'
       : null
+  const badgeItems = useMemo(() => [serviceBadge], [serviceBadge])
 
   return (
     <>
@@ -62,7 +63,7 @@ const NextServiceItem: React.FC<NextServiceItemProps> = ({ service }) => {
         {service.destination?.via && (
           <div className="via-text">{service.destination.via}</div>
         )}
-        <Badges items={[serviceBadge]} />
+        <Badges items={badgeItems} />
       </div>
     </>
   )

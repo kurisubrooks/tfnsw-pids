@@ -31,13 +31,13 @@ export const StationScroll: React.FC<StationScrollProps> = ({
     <div className="station_scroll">
       {scroll ? (
         <Marquee speed={scrollSpeed}>
-          {stopsJoined.map((station, index) => (
-            <Station key={index} name={station} />
+          {stopsJoined.map((station) => (
+            <Station key={station} name={station} />
           ))}
         </Marquee>
       ) : (
-        stopsJoined.map((station, index) => (
-          <Station key={index} name={station} />
+        stopsJoined.map((station) => (
+          <Station key={station} name={station} />
         ))
       )}
     </div>
